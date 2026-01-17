@@ -6,18 +6,16 @@
 @font-face {
     font-family: "Onest";
     src: url("/assets/fonts/Onest-VariableFont_wght.ttf") format("truetype");
-    font-display: swap;
 }
 
 @font-face {
     font-family: "Montserrat";
     src: url("/assets/fonts/Montserrat-VariableFont_wght.ttf")
         format("truetype");
-    font-display: swap;
 }
 
 :root {
-    font-family: "Onest", "Montserrat";
+    font-family: Onest, Montserrat;
     font-weight: 500;
     color: #181818;
     background-color: #fafafa;
