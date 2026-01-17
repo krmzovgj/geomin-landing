@@ -84,25 +84,32 @@ export const Header = () => {
                         ref={toggleBtnRef}
                         className="flex md:hidden w-10 h-10 justify-center items-center rounded-full bg-foreground cursor-pointer"
                     >
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={menuOpen ? "close" : "open"}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.2, type: "spring" }}
-                            >
-                                {menuOpen ? (
-                                    <Add
-                                        className="-rotate-45"
-                                        size={30}
-                                        color="#fff"
-                                    />
-                                ) : (
-                                    <HambergerMenu size={22} color="#fff" />
-                                )}
-                            </motion.div>
-                        </AnimatePresence>
+                        <motion.div
+                            key={menuOpen ? "close" : "open"}
+                            initial={{
+                                opacity: 0,
+                                scale: 0.9,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                scale: 1,
+                            }}
+                            exit={{
+                                opacity: 0,
+                                scale: 0.9,
+                            }}
+                            transition={{ duration: 0.6, type: "spring" }}
+                        >
+                            {menuOpen ? (
+                                <Add
+                                    className="-rotate-45"
+                                    size={30}
+                                    color="#fff"
+                                />
+                            ) : (
+                                <HambergerMenu size={22} color="#fff" />
+                            )}
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
