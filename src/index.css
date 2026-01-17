@@ -4,17 +4,20 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
-    font-family: onest;
-    src: url("./assets/fonts/Onest-VariableFont_wght.ttf");
+    font-family: "Onest";
+    src: url("/assets/fonts/Onest-VariableFont_wght.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
-    font-family: montserrat;
-    src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
+    font-family: "Montserrat";
+    src: url("/assets/fonts/Montserrat-VariableFont_wght.ttf")
+        format("truetype");
+    font-display: swap;
 }
 
 :root {
-    font-family: onest, montserrat;
+    font-family: "Onest", "Montserrat";
     font-weight: 500;
     color: #181818;
     background-color: #fafafa;
@@ -162,10 +165,10 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+    body {
+        @apply bg-background text-foreground;
     }
 }
