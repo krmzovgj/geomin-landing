@@ -87,9 +87,9 @@ export const Header = () => {
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={menuOpen ? "close" : "open"}
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.2, type: "spring" }}
                             >
                                 {menuOpen ? (
