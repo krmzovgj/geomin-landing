@@ -1,6 +1,13 @@
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { scrollToSection } from "@/lib/utils";
+import {
+    fadeScaleBlur,
+    fadeScaleBlurInView,
+    fadeUpBlur,
+    fadeUpBlurInView,
+    scaleInView,
+    scrollToSection,
+} from "@/lib/utils";
 import {
     BrowsersIcon,
     CityIcon,
@@ -59,8 +66,7 @@ export const Home = () => {
                 <Badge title="ГЕОМИН ПРО КОНСАЛТИНГ" />
 
                 <motion.h1
-                    initial={{ y: 80, opacity: 0, filter: "blur(20px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                    {...fadeUpBlur}
                     transition={{ type: "spring", duration: 0.5 }}
                     className="lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                 >
@@ -68,8 +74,7 @@ export const Home = () => {
                     рудници <br className="flex lg:hidden" /> и каменоломи
                 </motion.h1>
                 <motion.p
-                    initial={{ y: 60, opacity: 0, filter: "blur(20px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                    {...fadeUpBlur}
                     transition={{
                         type: "spring",
                         duration: 0.5,
@@ -91,8 +96,7 @@ export const Home = () => {
                 </Button>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
-                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    {...fadeScaleBlur}
                     transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
                     className="mt-10 relative w-full p-2 rounded-4xl bg-secondary overflow-hidden"
                 >
@@ -118,25 +122,15 @@ export const Home = () => {
                     <div className="">
                         <Badge title="ГЕОМИН?" />
                         <motion.h1
-                            initial={{
-                                y: 80,
-                                opacity: 0,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                y: 0,
-                                opacity: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeUpBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{ type: "spring", duration: 0.5 }}
                             className="flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                         >
                             Кој сме ние{" "}
                             <motion.span
-                                initial={{ scale: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, opacity: 1 }}
-                                viewport={{ once: true, amount: 0.2 }}
+                                {...scaleInView}
+                                viewport={{ once: true, amount: 0.35 }}
                                 transition={{
                                     type: "spring",
                                     duration: 0.5,
@@ -152,17 +146,8 @@ export const Home = () => {
                         </motion.h1>
 
                         <motion.p
-                            initial={{
-                                y: 80,
-                                opacity: 0,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                y: 0,
-                                opacity: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeUpBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{ type: "spring", duration: 0.5 }}
                             className=" text-foreground/60 mt-6 lg:mt-10 "
                         >
@@ -174,9 +159,8 @@ export const Home = () => {
 
                         <motion.span
                             className="hidden lg:flex mt-10 w-fit"
-                            initial={{ scale: 0, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...scaleInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -198,17 +182,8 @@ export const Home = () => {
                         <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
 
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                scale: 0.9,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeScaleBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -232,17 +207,8 @@ export const Home = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                scale: 0.9,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeScaleBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -266,17 +232,8 @@ export const Home = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                scale: 0.9,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeScaleBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -306,21 +263,15 @@ export const Home = () => {
                 <Badge title="Како се разликуваме?" />
 
                 <motion.h1
-                    initial={{ y: 80, opacity: 0, filter: "blur(20px)" }}
-                    whileInView={{
-                        y: 0,
-                        opacity: 1,
-                        filter: "blur(0px)",
-                    }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    {...fadeUpBlurInView}
+                    viewport={{ once: true, amount: 0.35 }}
                     transition={{ type: "spring", duration: 0.5 }}
                     className="mt-3 flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl  text-center text-4xl font-medium text-foreground"
                 >
                     Нашите услуги
                     <motion.span
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: true, amount: 0.2 }}
+                        {...fadeUpBlurInView}
+                        viewport={{ once: true, amount: 0.35 }}
                         transition={{
                             type: "spring",
                             duration: 0.5,
@@ -339,17 +290,8 @@ export const Home = () => {
                     {services.map((item, i) => (
                         <motion.div
                             key={i}
-                            initial={{
-                                y: 80,
-                                opacity: 0,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                y: 0,
-                                opacity: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeUpBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -386,51 +328,28 @@ export const Home = () => {
                 <Badge title="ИТ Сектор" />
 
                 <motion.h1
-                    initial={{ y: 80, opacity: 0, filter: "blur(20px)" }}
-                    whileInView={{
-                        y: 0,
-                        opacity: 1,
-                        filter: "blur(0px)",
-                    }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    {...fadeUpBlurInView}
+                    viewport={{ once: true, amount: 0.35 }}
                     transition={{ type: "spring", duration: 0.5 }}
                     className="mt-3 flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl  text-center text-4xl font-medium text-foreground"
                 >
                     Дигитални Решенија
                 </motion.h1>
                 <motion.p
-                    initial={{
-                        y: 80,
-                        opacity: 0,
-                        filter: "blur(20px)",
-                    }}
-                    whileInView={{
-                        y: 0,
-                        opacity: 1,
-                        filter: "blur(0px)",
-                    }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    {...fadeUpBlurInView}
+                    viewport={{ once: true, amount: 0.35 }}
                     transition={{ type: "spring", duration: 0.5 }}
                     className="text-center lg:w-2/3 text-foreground/60 mt-6 lg:mt-10 "
                 >
-                    Во нашиот ИТ сектор нудиме развој на практични <br className="hidden md:flex" /> дигитални решенија
-                    
+                    Во нашиот ИТ сектор нудиме развој на практични{" "}
+                    <br className="hidden md:flex" /> дигитални решенија
                 </motion.p>
 
                 <div className="mt-10 lg:mt-15 lg:gap-5 gap-4 flex flex-col">
                     <div className="flex-col lg:flex-row flex w-full justify-center items-center gap-4 lg:gap-5">
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                scale: 0.9,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeScaleBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -458,17 +377,8 @@ export const Home = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                scale: 0.9,
-                                filter: "blur(20px)",
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                            }}
-                            viewport={{ once: true, amount: 0.2 }}
+                            {...fadeScaleBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -500,9 +410,8 @@ export const Home = () => {
 
             <div id="contact" className="mt-10 lg:mt-40 pt-10">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
-                    whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    {...fadeScaleBlurInView}
+                    viewport={{ once: true, amount: 0.35 }}
                     transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
                     className="relative w-full rounded-4xl flex flex-col justify-center items-center overflow-hidden"
                 >
