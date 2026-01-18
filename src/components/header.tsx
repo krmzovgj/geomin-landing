@@ -120,11 +120,11 @@ export const Header = () => {
                         ref={menuRef}
                         initial={{
                             opacity: 0,
-                            scale: 0.9,
+                            scale: 0.6,
                             filter: "blur(20px)",
                         }}
                         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                        exit={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
+                        exit={{ opacity: 0, scale: 0.6, filter: "blur(20px)" }}
                         transition={{
                             type: "spring",
                             duration: 0.4,
