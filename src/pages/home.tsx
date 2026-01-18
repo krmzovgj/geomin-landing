@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
-    Building,
     Buildings2,
     FormatSquare,
     I3DCubeScan,
     Image,
     LampCharge,
-    MessageQuestion,
-    More,
+    MessageQuestion
 } from "iconsax-react";
 import { Badge } from "../components/ui/badge";
 
