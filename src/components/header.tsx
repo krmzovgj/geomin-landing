@@ -2,12 +2,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Add, Call, HambergerMenu, Instagram } from "iconsax-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
+import { scrollToSection } from "@/lib/utils";
 
 export const Header = () => {
     const [menuOpen, setmenuOpen] = useState(false);
 
     const toggleMenuOpen = () => setmenuOpen((prev) => !prev);
-    const menuItems = ["Почетна", "Кој сме ние", "ИТ Сектор"];
+    const menuItems = [
+        { label: "Почетна", target: "home" },
+        { label: "Кој сме ние", target: "whoweare" },
+        { label: "Услуги", target: "services" },
+        { label: "ИТ Сектор", target: "itdep" },
+    ];
 
     const menuRef = useRef<HTMLDivElement>(null); // 1. Create a ref for the button
     const toggleBtnRef = useRef<HTMLDivElement>(null); // 1. Create a ref for the button
@@ -57,12 +63,13 @@ export const Header = () => {
 
                 {/* Desktop Nav */}
                 <div className="md:flex hidden items-center gap-x-5">
-                    {menuItems.map((item) => (
+                    {menuItems.map((item, i) => (
                         <p
-                            key={item}
+                            onClick={() => scrollToSection(item.target)}
+                            key={i}
                             className="cursor-pointer hover:opacity-70 transition-opacity font-medium"
                         >
-                            {item}
+                            {item.label}
                         </p>
                     ))}
                 </div>
@@ -126,13 +133,17 @@ export const Header = () => {
                         className="fixed origin-center z-99 top-20 rounded-4xl place-self-center w-full bg-secondary/70 backdrop-blur-md border border-white/10 p-6  md:hidden overflow-hidden"
                     >
                         <div className="flex flex-col gap-4">
-                            {menuItems.map((item) => (
-                                <motion.p
-                                    key={item}
+                            {menuItems.map((item, i) => (
+                                <p
+                                    onClick={() => {
+                                        setmenuOpen(false);
+                                        scrollToSection(item.target);
+                                    }}
+                                    key={i}
                                     className="text-2xl tracking-tight"
                                 >
-                                    {item}
-                                </motion.p>
+                                    {item.label}
+                                </p>
                             ))}
 
                             <div className="flex mt-5 flex-col gap-y-4">

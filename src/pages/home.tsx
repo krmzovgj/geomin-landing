@@ -6,7 +6,7 @@ import {
     I3DCubeScan,
     Image,
     LampCharge,
-    MessageQuestion
+    MessageQuestion,
 } from "iconsax-react";
 import { Badge } from "../components/ui/badge";
 
@@ -89,7 +89,7 @@ export const Home = () => {
                 </motion.div>
             </div>
 
-            <div className="mt-20 md:mt-50 flex justify-start">
+            <div id="whoweare" className="pt-20 md:pt-50 flex justify-start">
                 <div className="flex flex-col md:flex-row items-start gap-x-20 justify-between">
                     <div className="">
                         <Badge title="ГЕОМИН?" />
@@ -202,6 +202,7 @@ export const Home = () => {
                                 scale: 1,
                                 filter: "blur(0px)",
                             }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{
                                 type: "spring",
                                 duration: 0.5,
@@ -215,7 +216,7 @@ export const Home = () => {
                 </div>
             </div>
 
-            <div className="mt-20 md:mt-50">
+            <div id="services" className="pt-20 md:pt-50">
                 <Badge title="Како се разликуваме?" />
 
                 <motion.h1
