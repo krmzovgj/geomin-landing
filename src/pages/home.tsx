@@ -171,8 +171,9 @@ export const Home = () => {
                         </motion.span>
                     </div>
 
-                    <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-3">
-                        <div className="z-20 w-3 h-14 rounded-full absolute place-self-center flex justify-center items-center top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                    <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-1">
+                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 flex justify-center items-center top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
 
                         <motion.div
                             initial={{
@@ -191,9 +192,20 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.1,
                             }}
-                            className="p-2 h-40  rounded-3xl bg-secondary"
+                            className="p-2 h-50  rounded-3xl bg-secondary"
                         >
-                            <div className="w-full h-full shadow-sm bg-background rounded-2xl"></div>
+                            <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                                <motion.img
+                                    src="/about.png"
+                                    alt=""
+                                    className="w-full  rounded-2xl h-full object-cover"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{
+                                        duration: 0.5,
+                                        type: "spring",
+                                    }}
+                                />
+                            </div>
                         </motion.div>
 
                         <motion.div
@@ -213,9 +225,20 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="p-2 h-40  rounded-3xl bg-secondary"
+                            className="p-2 h-50  rounded-3xl bg-secondary"
                         >
-                            <div className="w-full h-full shadow-sm bg-background rounded-2xl"></div>
+                            <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                                <motion.img
+                                    src="/about2.png"
+                                    alt=""
+                                    className="w-full  rounded-2xl h-full object-cover"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{
+                                        duration: 0.5,
+                                        type: "spring",
+                                    }}
+                                />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -249,7 +272,6 @@ export const Home = () => {
                         <I3DCubeScan
                             className="rotate-12 size-10 lg:size-20"
                             variant="Bulk"
-                            // size={80}
                             color="#181818"
                         />
                     </motion.span>
@@ -283,12 +305,12 @@ export const Home = () => {
                                         color="#66A786"
                                     />
                                 </div>
-                                <h1 className="text-2xl text-foreground font-black">
+                                <h1 className="hidden md:flex text-2xl text-foreground font-black">
                                     0{i + 1}
                                 </h1>
                             </div>
 
-                            <h1 className="mt-4 lg:mt-4 text-lg text-foreground font-semibold">
+                            <h1 className="mt-4 lg:mt-4 text-xl text-foreground">
                                 {item.label}
                             </h1>
                             <p className="mt-1 text-foreground/60 ">
@@ -370,9 +392,10 @@ export const Home = () => {
                                 <h2 className="text-xl mt-8">
                                     Развој на веб апликации
                                 </h2>
-                                <p className="mt-2 lg:w-2/3 text-foreground/60 text-sm">
-                                    Веб апликации кои се лесни за користење,
-                                    стабилни и прилагодени на вашите потреби.
+                                <p className="mt-2 lg:w-4/4 text-foreground/60 text-sm">
+                                    Веб апликации прилагодени на вашите потреби
+                                    за интерно користење, платформи од различен
+                                    тип, промотивни сајтови..
                                 </p>
                             </div>
                         </motion.div>
@@ -407,9 +430,10 @@ export const Home = () => {
                                 <h2 className="text-xl mt-8">
                                     Системи за автоматизација
                                 </h2>
-                                <p className="mt-2 lg:w-2/3 text-foreground/60 text-sm">
-                                    Автоматизација на секојдневни процеси со цел
-                                    вие се фокусирате на она што е важно.
+                                <p className="mt-2 lg:w-3/4 text-foreground/60 text-sm">
+                                    Автоматизација на секојдневни мануелни
+                                    процеси со цел вие да се фокусирате на она
+                                    што е важно.
                                 </p>
                             </div>
                         </motion.div>
