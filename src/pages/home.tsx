@@ -18,6 +18,7 @@ import {
     PaperPlaneTiltIcon,
     SealQuestionIcon,
     TreeStructureIcon,
+    XCircleIcon,
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { Badge } from "../components/ui/badge";
@@ -176,10 +177,14 @@ export const Home = () => {
                     </div>
 
                     <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-1">
-                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 flex justify-center items-center top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 flex justify-center items-center top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <XCircleIcon weight="duotone" size={14} color="#FF8C00" className="place-self-center" /></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <XCircleIcon weight="duotone" size={14} color="#FF8C00" className="place-self-center" /></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <XCircleIcon weight="duotone" size={14} color="#FF8C00" className="place-self-center" /></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <XCircleIcon weight="duotone" size={14} color="#FF8C00" className="place-self-center" /></div>
 
                         <motion.div
                             {...fadeScaleBlurInView}
@@ -362,7 +367,7 @@ export const Home = () => {
                                 <BrowsersIcon
                                     weight="duotone"
                                     size={120}
-                                    color="#000"
+                                    color="#FF8C00"
                                     className="-top-8 -right-5 rotate-12 absolute"
                                 />
                                 <h2 className="text-xl mt-8">
@@ -391,7 +396,7 @@ export const Home = () => {
                                 <TreeStructureIcon
                                     weight="duotone"
                                     size={120}
-                                    color="#000"
+                                    color="#FF8C00"
                                     className="-top-8 -right-5 rotate-12 absolute"
                                 />
                                 <h2 className="text-xl mt-8">
