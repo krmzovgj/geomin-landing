@@ -10,7 +10,7 @@ import {
     PackageIcon,
     PaperPlaneTiltIcon,
     SealQuestionIcon,
-    TreeStructureIcon
+    TreeStructureIcon,
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { Badge } from "../components/ui/badge";
@@ -19,7 +19,14 @@ export const Home = () => {
     const services = [
         {
             icon: HardHatIcon,
-            label: "Дупчење и минирање во рудници и каменоломи",
+            label: (
+                <>
+                    Дупчење и минирање во{" "}
+                    <span className="block sm:inline">
+                        рудници и каменоломи
+                    </span>
+                </>
+            ),
             desc: "Ефикасно и безбедно отворање и експлоатација на карпи и минерални ресурси.",
         },
         {
@@ -30,8 +37,12 @@ export const Home = () => {
         },
         {
             icon: CityIcon,
-            label: "Специјално минирање во урбани средини",
-
+            label: (
+                <>
+                    Специјално минирање во{" "}
+                    <span className="block sm:inline">урбани средини</span>
+                </>
+            ),
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
         {
@@ -360,7 +371,7 @@ export const Home = () => {
                             <h1 className="mt-4 lg:mt-4 text-xl text-foreground">
                                 {item.label}
                             </h1>
-                            <p className="mt-1 text-foreground/60 ">
+                            <p className="mt-1 md:w-3/4 text-foreground/60 ">
                                 {item.desc}
                             </p>
                         </motion.div>
@@ -402,9 +413,8 @@ export const Home = () => {
                     transition={{ type: "spring", duration: 0.5 }}
                     className="text-center lg:w-2/3 text-foreground/60 mt-6 lg:mt-10 "
                 >
-                    Во нашиот ИТ сектор креираме практични дигитални решенија{" "}
-                    <br className="hidden lg:flex" />
-                    што помагаат вашата работа да биде полесна и побрза.
+                    Во нашиот ИТ сектор нудиме развој на практични <br className="hidden md:flex" /> дигитални решенија
+                    
                 </motion.p>
 
                 <div className="mt-10 lg:mt-15 lg:gap-5 gap-4 flex flex-col">
@@ -522,7 +532,11 @@ export const Home = () => {
                         <p className="text-foreground/60">или</p>
 
                         <p className="text-foreground flex items-center gap-x-1">
-                            <PaperPlaneTiltIcon weight="duotone" size={20} color="#000" />
+                            <PaperPlaneTiltIcon
+                                weight="duotone"
+                                size={20}
+                                color="#000"
+                            />
                             geominpro@gmail.com
                         </p>
                     </div>

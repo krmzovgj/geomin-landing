@@ -52,7 +52,7 @@ export const Header = () => {
         }
     }, [menuOpen]);
     return (
-        <div className="z-50 fixed top-6 left-1/2 -translate-x-1/2 xl:w-2/3 w-[90%] flex flex-col items-center">
+        <div className="z-50 fixed top-4 left-1/2 -translate-x-1/2 xl:w-2/3 w-[90%] flex flex-col items-center">
             {/* MAIN PILL - Always constant radius */}
             <div className="w-full pl-6 pr-3 py-3 md:pl-7 md:p-3 flex justify-between items-center bg-secondary/70 backdrop-blur-md border border-white/10 rounded-full z-60">
                 <div className="flex flex-col justify-center">
