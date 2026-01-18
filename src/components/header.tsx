@@ -7,13 +7,7 @@ export const Header = () => {
     const [menuOpen, setmenuOpen] = useState(false);
 
     const toggleMenuOpen = () => setmenuOpen((prev) => !prev);
-    const menuItems = [
-        "Почетна",
-        "Кој сме ние",
-        "Проекти",
-        "Услуги",
-        "ИТ Сектор",
-    ];
+    const menuItems = ["Почетна", "Кој сме ние", "ИТ Сектор"];
 
     const menuRef = useRef<HTMLDivElement>(null); // 1. Create a ref for the button
     const toggleBtnRef = useRef<HTMLDivElement>(null); // 1. Create a ref for the button
