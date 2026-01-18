@@ -339,7 +339,7 @@ export const Home = () => {
                 </motion.p>
 
                 <div className="mt-10 lg:mt-15 lg:gap-5 gap-4 flex flex-col">
-                    <div className="flex-col lg:flex-row flex w-full items-center gap-4 lg:gap-5">
+                    <div className="flex-col lg:flex-row flex w-full justify-center items-center gap-4 lg:gap-5">
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -357,7 +357,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="w-full p-2 rounded-3xl bg-secondary"
+                            className="md:w-2/5 p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
                                 <h1 className="text-4xl font-black">01</h1>
@@ -394,7 +394,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="w-full p-2 rounded-3xl bg-secondary"
+                            className="md:w-2/5 p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
                                 <h1 className="text-4xl font-black">02</h1>
