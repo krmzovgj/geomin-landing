@@ -1,8 +1,8 @@
+import { scrollToSection } from "@/lib/utils";
+import { InstagramLogoIcon, ListIcon, PhoneCallIcon, XIcon } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Add, Call, HambergerMenu, Instagram } from "iconsax-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
-import { scrollToSection } from "@/lib/utils";
 
 export const Header = () => {
     const [menuOpen, setmenuOpen] = useState(false);
@@ -75,7 +75,7 @@ export const Header = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <Button className="md:flex hidden text-md px-8 bg-foreground text-background rounded-full">
+                    <Button onClick={() => scrollToSection("contact")} className="md:flex hidden text-md px-8 bg-foreground text-background rounded-full">
                         Контактирај нѐ
                     </Button>
 
@@ -102,13 +102,17 @@ export const Header = () => {
                             transition={{ duration: 0.6, type: "spring" }}
                         >
                             {menuOpen ? (
-                                <Add
-                                    className="-rotate-45"
-                                    size={30}
+                                <XIcon
+                                    weight="regular"
+                                    size={22}
                                     color="#fff"
                                 />
                             ) : (
-                                <HambergerMenu size={22} color="#fff" />
+                                <ListIcon
+                                    weight="regular"
+                                    size={22}
+                                    color="#fff"
+                                />
                             )}
                         </motion.div>
                     </motion.div>
@@ -152,8 +156,8 @@ export const Header = () => {
                                     href="https://www.instagram.com/geomin_pro/"
                                 >
                                     <div className="flex items-center gap-x-2">
-                                        <Instagram
-                                            variant="Bold"
+                                        <InstagramLogoIcon
+                                            weight="duotone"
                                             size={20}
                                             color="#000"
                                         />
@@ -165,8 +169,8 @@ export const Header = () => {
 
                                 <a target="_blank" href="tel:+389 75 203 522">
                                     <div className="flex items-center gap-x-2">
-                                        <Call
-                                            variant="Bold"
+                                        <PhoneCallIcon
+                                            weight="duotone"
                                             size={20}
                                             color="#000"
                                         />

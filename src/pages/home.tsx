@@ -1,38 +1,41 @@
+import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { scrollToSection } from "@/lib/utils";
 import {
-    Buildings2,
-    Code1,
-    FormatSquare,
-    HierarchySquare,
-    I3DCubeScan,
-    Image,
-    LampCharge,
-    MessageQuestion,
-} from "iconsax-react";
+    BrowsersIcon,
+    CityIcon,
+    DotsNineIcon,
+    HardHatIcon,
+    LightbulbIcon,
+    PackageIcon,
+    PaperPlaneTiltIcon,
+    SealQuestionIcon,
+    TreeStructureIcon
+} from "@phosphor-icons/react";
+import { motion } from "framer-motion";
 import { Badge } from "../components/ui/badge";
 
 export const Home = () => {
     const services = [
         {
-            icon: Image,
+            icon: HardHatIcon,
             label: "Дупчење и минирање во рудници и каменоломи",
             desc: "Ефикасно и безбедно отворање и експлоатација на карпи и минерални ресурси.",
         },
         {
-            icon: FormatSquare,
+            icon: DotsNineIcon,
             label: "Инфраструктурни проекти",
 
             desc: "Дупчење и минирање за изградба на патишта, брани, нафтоводи и канали за далноводи.",
         },
         {
-            icon: Buildings2,
+            icon: CityIcon,
             label: "Специјално минирање во урбани средини",
 
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
         {
-            icon: LampCharge,
+            icon: LightbulbIcon,
             label: "Консултантски услуги и инженеринг",
 
             desc: "Стручни совети и поддршка при планирање и спроведување на сложени проекти.",
@@ -68,7 +71,11 @@ export const Home = () => {
                     надзор во рударството
                 </motion.p>
 
-                <Button variant="default" className="mt-5">
+                <Button
+                    variant="default"
+                    onClick={() => scrollToSection("whoweare")}
+                    className="mt-5"
+                >
                     Дознај Повеќе
                 </Button>
 
@@ -82,7 +89,8 @@ export const Home = () => {
                     <motion.div className="shadow-sm overflow-hidden rounded-3xl w-full  lg:h-145">
                         <motion.img
                             src="/heroimg.png"
-                            alt=""
+                            loading="eager"
+                            decoding="async"
                             className="w-full  rounded-3xl h-full object-cover"
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.5, type: "spring" }}
@@ -124,9 +132,9 @@ export const Home = () => {
                                     delay: 0.1,
                                 }}
                             >
-                                <MessageQuestion
+                                <SealQuestionIcon
                                     className="flex lg:hidden rotate-12 size-10 lg:size-20"
-                                    variant="Bulk"
+                                    weight="duotone"
                                     color="#181818"
                                 />
                             </motion.span>
@@ -163,17 +171,20 @@ export const Home = () => {
                                 duration: 0.5,
                             }}
                         >
-                            <MessageQuestion
-                                className="rotate-12 size-10 lg:size-20"
-                                variant="Bulk"
+                            <SealQuestionIcon
+                                className="rotate-12 "
+                                size={120}
+                                weight="duotone"
                                 color="#181818"
                             />
                         </motion.span>
                     </div>
 
                     <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-1">
-                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 flex justify-center items-center top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 flex justify-center items-center top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute left-15 flex justify-center items-center top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
+                        <div className="z-20 w-3 h-14 rounded-full absolute right-15 flex justify-center items-center top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm"></div>
 
                         <motion.div
                             initial={{
@@ -197,7 +208,8 @@ export const Home = () => {
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
                                     src="/about.png"
-                                    alt=""
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full  rounded-2xl h-full object-cover"
                                     whileHover={{ scale: 1.05 }}
                                     transition={{
@@ -230,7 +242,42 @@ export const Home = () => {
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
                                     src="/about2.png"
-                                    alt=""
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="w-full  rounded-2xl h-full object-cover"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{
+                                        duration: 0.5,
+                                        type: "spring",
+                                    }}
+                                />
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                scale: 0.9,
+                                filter: "blur(20px)",
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                scale: 1,
+                                filter: "blur(0px)",
+                            }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                type: "spring",
+                                duration: 0.5,
+                                delay: 0.2,
+                            }}
+                            className="p-2 h-50  rounded-3xl bg-secondary"
+                        >
+                            <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                                <motion.img
+                                    src="/cta.png"
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full  rounded-2xl h-full object-cover"
                                     whileHover={{ scale: 1.05 }}
                                     transition={{
@@ -269,9 +316,9 @@ export const Home = () => {
                             delay: 0.1,
                         }}
                     >
-                        <I3DCubeScan
+                        <PackageIcon
                             className="rotate-12 size-10 lg:size-20"
-                            variant="Bulk"
+                            weight="duotone"
                             color="#181818"
                         />
                     </motion.span>
@@ -300,12 +347,12 @@ export const Home = () => {
                             <div className="flex items-center gap-x-4">
                                 <div className="flex w-13 h-13 border-2 border-[#66A786] rounded-2xl bg-[#66A786]/10 justify-center items-center">
                                     <item.icon
-                                        variant="Bulk"
-                                        size={26}
+                                        weight="duotone"
                                         color="#66A786"
+                                        size={26}
                                     />
                                 </div>
-                                <h1 className="hidden md:flex text-2xl text-foreground font-black">
+                                <h1 className="hidden lg:flex text-2xl text-foreground font-black">
                                     0{i + 1}
                                 </h1>
                             </div>
@@ -379,15 +426,15 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="md:w-2/5 p-2 rounded-3xl bg-secondary"
+                            className="lg:w-2/5 p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
                                 <h1 className="text-4xl font-black">01</h1>
-                                <Code1
-                                    variant="Bulk"
-                                    size={110}
+                                <BrowsersIcon
+                                    weight="duotone"
+                                    size={120}
                                     color="#000"
-                                    className="-top-5 -right-5 rotate-12 absolute"
+                                    className="-top-8 -right-5 rotate-12 absolute"
                                 />
                                 <h2 className="text-xl mt-8">
                                     Развој на веб апликации
@@ -417,15 +464,15 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="md:w-2/5 p-2 rounded-3xl bg-secondary"
+                            className="lg:w-2/5 p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
                                 <h1 className="text-4xl font-black">02</h1>
-                                <HierarchySquare
-                                    variant="Bulk"
-                                    size={110}
+                                <TreeStructureIcon
+                                    weight="duotone"
+                                    size={120}
                                     color="#000"
-                                    className="-top-5 -right-5 rotate-12 absolute"
+                                    className="-top-8 -right-5 rotate-12 absolute"
                                 />
                                 <h2 className="text-xl mt-8">
                                     Системи за автоматизација
@@ -440,6 +487,49 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <div id="contact" className="mt-10 lg:mt-40 pt-10">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
+                    whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
+                    className="relative w-full rounded-4xl flex flex-col justify-center items-center overflow-hidden"
+                >
+                    <Badge title="Стапи во контакт" />
+                    <div className="flex items-center relative  overflow-visible gap-x-3 lg:gap-x-4">
+                        {/* Icon on top */}
+
+                        {/* Text below */}
+                        <h1 className="z-0 mt-1 md:mt-10 lg:text-7xl text-4xl font-medium text-center text-foreground">
+                            Контактирај нѐ
+                        </h1>
+                        <HardHatIcon
+                            className="absolute  -right-6 -top-8 md:-right-10 md:-top-9   rotate-20 size-10 lg:size-20"
+                            weight="duotone"
+                            color="#66A786"
+                        />
+                    </div>
+
+                    <p className="text-center text-foreground/60 mt-6 lg:mt-10">
+                        Стапи во контакт преку емаил или телефонски број
+                    </p>
+
+                    <div className="flex items-center flex-col lg:flex-row gap-3 mt-5">
+                        <Button variant="default" asChild>
+                            <a href="tel:+389 78 239 880">+389 78 239 880</a>
+                        </Button>
+                        <p className="text-foreground/60">или</p>
+
+                        <p className="text-foreground flex items-center gap-x-1">
+                            <PaperPlaneTiltIcon weight="duotone" size={20} color="#000" />
+                            geominpro@gmail.com
+                        </p>
+                    </div>
+                </motion.div>
+            </div>
+
+            <Footer />
         </div>
     );
 };
