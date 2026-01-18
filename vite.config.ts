@@ -15,8 +15,9 @@ export default defineConfig({
             exclude: /node_modules/,
             logStats: true,
             // Additional options for each file type if needed
-            png: { quality: 80 },
-            jpeg: { quality: 75 },
+            png: { compressionLevel: 9 },
+            jpg: { quality: 60, progressive: true },
+            jpeg: { quality: 75 },  
             webp: { quality: 80 },
         }),
     ],
