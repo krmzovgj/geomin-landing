@@ -104,7 +104,7 @@ export const Home = () => {
                     {/* Inner wrapper keeps the image inset */}
                     <motion.div className="shadow-sm overflow-hidden rounded-3xl w-full  lg:h-145">
                         <motion.img
-                            src="/heroimg.png"
+                            src="/heroimg.avif"
                             loading="eager"
                             decoding="async"
                             className="w-full  rounded-3xl h-full object-cover"
@@ -222,7 +222,7 @@ export const Home = () => {
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
-                                    src="/about.png"
+                                    src="/about.avif"
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full  rounded-2xl h-full object-cover"
@@ -247,7 +247,7 @@ export const Home = () => {
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
-                                    src="/about2.png"
+                                    src="/about2.avif"
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full  rounded-2xl h-full object-cover"
@@ -272,7 +272,7 @@ export const Home = () => {
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
-                                    src="/cta.png"
+                                    src="/cta.avif"
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full  rounded-2xl h-full object-cover"

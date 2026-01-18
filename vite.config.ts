@@ -10,15 +10,14 @@ export default defineConfig({
         react(),
         tailwindcss(),
         ViteImageOptimizer({
-            // Optional: pass specific config here
             include: /\.(png|jpe?g|webp|svg|avif)$/i,
             exclude: /node_modules/,
             logStats: true,
-            // Additional options for each file type if needed
             png: { compressionLevel: 9 },
-            jpg: { quality: 60, progressive: true },
-            jpeg: { quality: 75 },  
-            webp: { quality: 80 },
+            jpeg: { quality: 70, progressive: true },
+            webp: { quality: 70 },
+            avif: { quality: 50 }, 
+            svg: {},
         }),
     ],
     resolve: {
