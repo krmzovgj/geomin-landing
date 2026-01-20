@@ -16,6 +16,7 @@ import {
     LightbulbIcon,
     PackageIcon,
     PaperPlaneTiltIcon,
+    PhoneCallIcon,
     SealQuestionIcon,
     TreeStructureIcon,
     XCircleIcon,
@@ -442,7 +443,7 @@ export const Home = () => {
                     {...fadeScaleBlurInView}
                     viewport={{ once: true, amount: 0.35 }}
                     transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
-                    className="relative w-full rounded-4xl flex flex-col justify-center items-center overflow-hidden"
+                    className="relative w-full flex flex-col justify-center items-center"
                 >
                     <Badge title="Стапи во контакт" />
                     <div className="flex items-center relative  overflow-visible gap-x-3 lg:gap-x-4">
@@ -460,23 +461,46 @@ export const Home = () => {
                     </div>
 
                     <p className="text-center text-foreground/60 mt-6 lg:mt-10">
-                        Стапи во контакт преку емаил или телефонски број
+                        Стапи во контакт преку телефонски број
                     </p>
 
-                    <div className="flex items-center flex-col lg:flex-row gap-3 mt-5">
-                        <Button variant="default" asChild>
-                            <a href="tel:+389 78 239 880">+389 78 239 880</a>
-                        </Button>
-                        <p className="text-foreground/60">или</p>
+                    <div className="flex items-start flex-col lg:flex-row xl:gap-20 gap-15 mt-15">
+                        <div className="flex flex-col justify-center items-center">
+                            <h3 className="text-2xl font-medium">Геомин</h3>
+                            <h3 className="text-md text-foreground/70 font-medium">
+                                Митко
+                            </h3>
+                            <div className="mt-4 flex items-center gap-x-2">
+                                <PhoneCallIcon
+                                    weight="duotone"
+                                    color="#66A786"
+                                    size={20}
+                                />
+                                <a href="tel:+389 75 203 522">
+                                    +389 75 203 522
+                                </a>
+                            </div>
+                        </div>
 
-                        <p className="text-foreground flex items-center gap-x-1">
-                            <PaperPlaneTiltIcon
-                                weight="duotone"
-                                size={20}
-                                color="#000"
-                            />
-                            geominpro@gmail.com
-                        </p>
+                        {/* <div className="lg:h-30 lg:w-1 w-full h-1 bg-foreground/10 rounded-lg"></div> */}
+
+                        <div className="flex flex-col justify-center items-center">
+                            <h3 className="text-2xl font-medium">ИТ Сектор</h3>
+                            <h3 className="text-md text-foreground/70 font-medium">
+                                Ѓорги
+                            </h3>
+
+                            <div className="mt-4 flex items-center gap-x-2">
+                                <PhoneCallIcon
+                                    color="#FF8C00"
+                                    weight="duotone"
+                                    size={20}
+                                />
+                                <a href="tel:+389 78 239 880">
+                                    +389 78 239 880
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
             </div>

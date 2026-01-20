@@ -63,7 +63,7 @@ export const Footer = () => {
                     <p className="mb-3 font-medium text-foreground">Контакт</p>
                     <div className="flex flex-col  items-start  gap-2  md:gap-4 text-sm">
                         <a
-                            href="tel:+38978239880"
+                            href="tel:+38975 203 522"
                             className="text-foreground/70 flex items-center gap-x-2  hover:text-foreground transition"
                         >
                             <PhoneCallIcon
@@ -71,7 +71,7 @@ export const Footer = () => {
                                 size={20}
                                 color="#000"
                             />
-                            +389 78 239 880
+                            +389 75 203 522
                         </a>
                         <p className="text-foreground/70 flex items-center gap-x-1 hover:text-foreground transition">
                             <AtIcon weight="duotone" size={20} color="#000" />
