@@ -15,11 +15,10 @@ import {
     HardHatIcon,
     LightbulbIcon,
     PackageIcon,
-    PaperPlaneTiltIcon,
     PhoneCallIcon,
     SealQuestionIcon,
     TreeStructureIcon,
-    XCircleIcon,
+    XCircleIcon
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { Badge } from "../components/ui/badge";
