@@ -18,7 +18,7 @@ import {
     PhoneCallIcon,
     SealQuestionIcon,
     TreeStructureIcon,
-    XCircleIcon
+    XCircleIcon,
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { Badge } from "../components/ui/badge";
@@ -35,13 +35,13 @@ export const Home = () => {
                     </span>
                 </>
             ),
-            desc: "Ефикасно и безбедно отворање и експлоатација на карпи и минерални ресурси.",
+            desc: "Ефикасно и безбедно минирање во усеци и масовно минирање при отварање на рудници и каменоломи.",
         },
         {
             icon: DotsNineIcon,
             label: "Инфраструктурни проекти",
 
-            desc: "Дупчење и минирање за изградба на патишта, брани, нафтоводи и канали за далноводи.",
+            desc: "Дупчење и минирање при изградба на патишта, железници, брани, ветерници, нафтоводи, гасоводи и канално минирање.",
         },
         {
             icon: CityIcon,
@@ -57,22 +57,25 @@ export const Home = () => {
             icon: LightbulbIcon,
             label: "Консултантски услуги и инженеринг",
 
-            desc: "Стручни совети и поддршка при планирање и спроведување на сложени проекти.",
+            desc: "Стручни совети и поддршка од областа на рударството при планирање, проектирање и спроведување на рударски проекти и надзор во рударството.",
         },
     ];
 
     return (
         <div className="h-full">
             <div className="flex flex-col items-center">
-                <Badge title="ГЕОМИН ПРО КОНСАЛТИНГ" />
+                <Badge
+                    className="text-[#66A786]"
+                    title="ГЕОМИН ПРО КОНСАЛТИНГ"
+                />
 
                 <motion.h1
                     {...fadeUpBlur}
                     transition={{ type: "spring", duration: 0.5 }}
                     className="lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                 >
-                    Минирање на патишта, <br className="hidden lg:flex" />
-                    рудници <br className="flex lg:hidden" /> и каменоломи
+                    Mинирање, проектирање <br className="hidden lg:flex" />и
+                    руднички надзор
                 </motion.h1>
                 <motion.p
                     {...fadeUpBlur}
@@ -121,14 +124,14 @@ export const Home = () => {
             >
                 <div className="flex flex-col lg:flex-row items-start gap-x-20 justify-between">
                     <div className="">
-                        <Badge title="ГЕОМИН?" />
+                        <Badge className="text-[#66A786]" title="ГЕОМИН?" />
                         <motion.h1
                             {...fadeUpBlurInView}
                             viewport={{ once: true, amount: 0.35 }}
                             transition={{ type: "spring", duration: 0.5 }}
                             className="flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                         >
-                            Кој сме ние{" "}
+                            Кои сме ние{" "}
                             <motion.span
                                 {...scaleInView}
                                 viewport={{ once: true, amount: 0.35 }}
@@ -154,8 +157,8 @@ export const Home = () => {
                         >
                             Геомин Про Консалтинг е компанија која обезбедува
                             услуги за дупчење и минирање во рудници, каменоломи,
-                            при изградба нa патишта, брани, нафтоводи, канали за
-                            далноводи и специјално минирање во урбани средини.
+                            при изградба нa патишта, железници, брани,
+                            ветерници, нафтоводи, гасоводи и канално минирање
                         </motion.p>
 
                         <motion.span
@@ -289,7 +292,7 @@ export const Home = () => {
             </div>
 
             <div id="services" className="mt-10 lg:mt-40 pt-10">
-                <Badge title="Како се разликуваме?" />
+                <Badge className="text-[#66A786]"  title="Како се разликуваме?" />
 
                 <motion.h1
                     {...fadeUpBlurInView}
@@ -354,7 +357,7 @@ export const Home = () => {
                 id="itdep"
                 className="mt-10 lg:mt-40 pt-10 flex flex-col justify-center items-center"
             >
-                <Badge title="ИТ Сектор" />
+                <Badge className="text-[#FF8C00]"  title="ИТ Сектор" />
 
                 <motion.h1
                     {...fadeUpBlurInView}

@@ -10,7 +10,7 @@ export const Header = () => {
     const toggleMenuOpen = () => setmenuOpen((prev) => !prev);
     const menuItems = [
         { label: "Почетна", target: "home" },
-        { label: "Кој сме ние", target: "whoweare" },
+        { label: "Кои сме ние", target: "whoweare" },
         { label: "Услуги", target: "services" },
         { label: "ИТ Сектор", target: "itdep" },
     ];
