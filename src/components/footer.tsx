@@ -34,7 +34,7 @@ export const Footer = () => {
                             onClick={() => scrollToSection("whoweare")}
                             className="cursor-pointer hover:text-foreground transition"
                         >
-                            Кој сме ние
+                            Кои сме ние
                         </button>
                         <button
                             onClick={() => scrollToSection("services")}

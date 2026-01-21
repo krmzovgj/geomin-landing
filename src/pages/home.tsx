@@ -35,11 +35,13 @@ export const Home = () => {
                     </span>
                 </>
             ),
+            imgUrl: "/service1.avif",
             desc: "Ефикасно и безбедно минирање во усеци и масовно минирање при отварање на рудници и каменоломи.",
         },
         {
             icon: DotsNineIcon,
             label: "Инфраструктурни проекти",
+            imgUrl: "/service2.avif",
 
             desc: "Дупчење и минирање при изградба на патишта, железници, брани, ветерници, нафтоводи, гасоводи и канално минирање.",
         },
@@ -51,11 +53,14 @@ export const Home = () => {
                     <span className="block sm:inline">урбани средини</span>
                 </>
             ),
+            imgUrl: "/service3.avif",
+
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
         {
             icon: LightbulbIcon,
             label: "Консултантски услуги и инженеринг",
+            imgUrl: "/service4.avif",
 
             desc: "Стручни совети и поддршка од областа на рударството при планирање, проектирање и спроведување на рударски проекти и надзор во рударството.",
         },
@@ -107,7 +112,7 @@ export const Home = () => {
                     {/* Inner wrapper keeps the image inset */}
                     <motion.div className="shadow-sm overflow-hidden rounded-3xl w-full  lg:h-145">
                         <motion.img
-                            src="/heroimg.avif"
+                            src="/hero.png"
                             loading="eager"
                             decoding="async"
                             className="w-full  rounded-3xl h-full object-cover"
@@ -180,7 +185,7 @@ export const Home = () => {
                     </div>
 
                     <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-1">
-                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
                                 weight="duotone"
                                 size={16}
@@ -188,7 +193,7 @@ export const Home = () => {
                                 className="-top-0.5 relative"
                             />
                         </div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center right-15 top-1/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center right-15 top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
                                 weight="duotone"
                                 size={16}
@@ -196,7 +201,7 @@ export const Home = () => {
                                 className="-top-0.5 relative"
                             />
                         </div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        {/* <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
                                 weight="duotone"
                                 size={16}
@@ -211,9 +216,9 @@ export const Home = () => {
                                 color="#FF8C00"
                                 className="-top-0.5 relative"
                             />
-                        </div>
+                        </div> */}
 
-                        <motion.div
+                        {/* <motion.div
                             {...fadeScaleBlurInView}
                             viewport={{ once: true, amount: 0.35 }}
                             transition={{
@@ -225,7 +230,7 @@ export const Home = () => {
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
-                                    src="/about.avif"
+                                    src="/"
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full  rounded-2xl h-full object-cover"
@@ -236,7 +241,7 @@ export const Home = () => {
                                     }}
                                 />
                             </div>
-                        </motion.div>
+                        </motion.div> */}
 
                         <motion.div
                             {...fadeScaleBlurInView}
@@ -292,7 +297,10 @@ export const Home = () => {
             </div>
 
             <div id="services" className="mt-10 lg:mt-40 pt-10">
-                <Badge className="text-[#66A786]"  title="Како се разликуваме?" />
+                <Badge
+                    className="text-[#66A786]"
+                    title="Како се разликуваме?"
+                />
 
                 <motion.h1
                     {...fadeUpBlurInView}
@@ -318,7 +326,7 @@ export const Home = () => {
                     </motion.span>
                 </motion.h1>
 
-                <div className="mt-10 lg:mt-15 flex flex-col gap-8 lg:gap-20 lg:gap-y-15 lg:grid lg:grid-rows-2 lg:grid-cols-2 ">
+                <div className="mt-10 lg:mt-15 flex flex-col gap-8 lg:gap-1 lg:grid lg:grid-rows-2 lg:grid-cols-1 ">
                     {services.map((item, i) => (
                         <motion.div
                             key={i}
@@ -328,26 +336,54 @@ export const Home = () => {
                                 type: "spring",
                                 duration: 0.5,
                             }}
+                            className="flex flex-col lg:flex-row justify-between lg:items-center gap-y-4 lg:gap-1"
                         >
-                            <div className="flex items-center gap-x-4">
-                                <div className="flex w-13 h-13 border-2 border-[#66A786] rounded-2xl bg-[#66A786]/10 justify-center items-center">
-                                    <item.icon
-                                        weight="duotone"
-                                        color="#66A786"
-                                        size={26}
-                                    />
+                            <div className="lg:w-2/3">
+                                <div className="flex items-center gap-x-4">
+                                    <div className="flex w-13 h-13 border-2 border-[#66A786] rounded-2xl bg-[#66A786]/10 justify-center items-center">
+                                        <item.icon
+                                            weight="duotone"
+                                            color="#66A786"
+                                            size={26}
+                                        />
+                                    </div>
+                                    <h1 className="hidden lg:flex text-2xl text-foreground font-black">
+                                        0{i + 1}
+                                    </h1>
                                 </div>
-                                <h1 className="hidden lg:flex text-2xl text-foreground font-black">
-                                    0{i + 1}
+
+                                <h1 className="mt-4 lg:mt-4 text-xl lg:text-2xl text-foreground">
+                                    {item.label}
                                 </h1>
+                                <p className="mt-1 lg:w-2/3 text-foreground/60 ">
+                                    {item.desc}
+                                </p>
                             </div>
 
-                            <h1 className="mt-4 lg:mt-4 text-xl text-foreground">
-                                {item.label}
-                            </h1>
-                            <p className="mt-1 md:w-3/4 text-foreground/60 ">
-                                {item.desc}
-                            </p>
+                            <motion.div
+                                {...fadeScaleBlurInView}
+                                viewport={{ once: true, amount: 0.35 }}
+                                transition={{
+                                    type: "spring",
+                                    duration: 0.5,
+                                    delay: 0.2,
+                                }}
+                                className="p-2 h-50 lg:h-60 lg:w-1/2 rounded-3xl bg-secondary"
+                            >
+                                <div className="w-full z-0 h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                                    <motion.img
+                                        src={item.imgUrl}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full  rounded-2xl h-full object-cover"
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{
+                                            duration: 0.5,
+                                            type: "spring",
+                                        }}
+                                    />
+                                </div>
+                            </motion.div>
                         </motion.div>
                     ))}
                 </div>
@@ -357,7 +393,7 @@ export const Home = () => {
                 id="itdep"
                 className="mt-10 lg:mt-40 pt-10 flex flex-col justify-center items-center"
             >
-                <Badge className="text-[#FF8C00]"  title="ИТ Сектор" />
+                <Badge className="text-[#FF8C00]" title="ИТ Сектор" />
 
                 <motion.h1
                     {...fadeUpBlurInView}
