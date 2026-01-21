@@ -53,7 +53,7 @@ export const Home = () => {
                     <span className="block sm:inline">урбани средини</span>
                 </>
             ),
-            imgUrl: "/service3.avif",
+            imgUrl: "/about.avif",
 
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
@@ -71,7 +71,7 @@ export const Home = () => {
             <div className="flex flex-col items-center">
                 <Badge
                     className="text-[#66A786]"
-                    title="ГЕОМИН ПРО КОНСАЛТИНГ"
+                    title="Геомин Про Консалтинг"
                 />
 
                 <motion.h1
@@ -107,12 +107,12 @@ export const Home = () => {
                 <motion.div
                     {...fadeScaleBlur}
                     transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
-                    className="mt-10 relative w-full p-2 rounded-4xl bg-secondary overflow-hidden"
+                    className="mt-10 relative w-full p-1 lg:p-2 rounded-4xl bg-secondary overflow-hidden"
                 >
                     {/* Inner wrapper keeps the image inset */}
                     <motion.div className="shadow-sm overflow-hidden rounded-3xl w-full  lg:h-145">
                         <motion.img
-                            src="/hero.png"
+                            src="/heroimg.avif"
                             loading="eager"
                             decoding="async"
                             className="w-full  rounded-3xl h-full object-cover"
@@ -129,7 +129,7 @@ export const Home = () => {
             >
                 <div className="flex flex-col lg:flex-row items-start gap-x-20 justify-between">
                     <div className="">
-                        <Badge className="text-[#66A786]" title="ГЕОМИН?" />
+                        <Badge className="text-[#66A786]" title="За нас" />
                         <motion.h1
                             {...fadeUpBlurInView}
                             viewport={{ once: true, amount: 0.35 }}
@@ -189,7 +189,7 @@ export const Home = () => {
                             <XCircleIcon
                                 weight="duotone"
                                 size={16}
-                                color="#FF8C00"
+                                color="#fff"
                                 className="-top-0.5 relative"
                             />
                         </div>
@@ -197,51 +197,11 @@ export const Home = () => {
                             <XCircleIcon
                                 weight="duotone"
                                 size={16}
-                                color="#FF8C00"
+                                color="#fff"
                                 className="-top-0.5 relative"
                             />
                         </div>
-                        {/* <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
-                            <XCircleIcon
-                                weight="duotone"
-                                size={16}
-                                color="#FF8C00"
-                                className="-top-0.5 relative"
-                            />
-                        </div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center right-15 top-2/3 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
-                            <XCircleIcon
-                                weight="duotone"
-                                size={16}
-                                color="#FF8C00"
-                                className="-top-0.5 relative"
-                            />
-                        </div> */}
-
-                        {/* <motion.div
-                            {...fadeScaleBlurInView}
-                            viewport={{ once: true, amount: 0.35 }}
-                            transition={{
-                                type: "spring",
-                                duration: 0.5,
-                                delay: 0.1,
-                            }}
-                            className="p-2 h-50  rounded-3xl bg-secondary"
-                        >
-                            <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
-                                <motion.img
-                                    src="/"
-                                    loading="lazy"
-                                    decoding="async"
-                                    className="w-full  rounded-2xl h-full object-cover"
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{
-                                        duration: 0.5,
-                                        type: "spring",
-                                    }}
-                                />
-                            </div>
-                        </motion.div> */}
+                
 
                         <motion.div
                             {...fadeScaleBlurInView}
@@ -251,7 +211,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="p-2 h-50  rounded-3xl bg-secondary"
+                            className="p-1 lg:p-2 h-50  rounded-3xl bg-secondary"
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
@@ -276,7 +236,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="p-2 h-50  rounded-3xl bg-secondary"
+                            className="p-1 lg:p-2 h-50  rounded-3xl bg-secondary"
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
@@ -368,14 +328,14 @@ export const Home = () => {
                                     duration: 0.5,
                                     delay: 0.2,
                                 }}
-                                className="p-2 h-50 lg:h-60 lg:w-1/2 rounded-3xl bg-secondary"
+                                className="p-1 lg:p-2 h-50 lg:h-60 lg:w-1/2 rounded-3xl bg-secondary"
                             >
                                 <div className="w-full z-0 h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                     <motion.img
                                         src={item.imgUrl}
                                         loading="lazy"
                                         decoding="async"
-                                        className="w-full  rounded-2xl h-full object-cover"
+                                        className="w-full relative scale-101  rounded-2xl h-full object-cover"
                                         whileHover={{ scale: 1.05 }}
                                         transition={{
                                             duration: 0.5,
