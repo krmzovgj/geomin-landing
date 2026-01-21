@@ -187,7 +187,7 @@ export const Home = () => {
                     <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-1">
                         <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
-                                weight="duotone"
+                                weight="fill"
                                 size={16}
                                 color="#fff"
                                 className="-top-0.5 relative"
@@ -195,7 +195,7 @@ export const Home = () => {
                         </div>
                         <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center right-15 top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
-                                weight="duotone"
+                                weight="fill"
                                 size={16}
                                 color="#fff"
                                 className="-top-0.5 relative"
