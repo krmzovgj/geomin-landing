@@ -127,8 +127,8 @@ export const Home = () => {
                 id="whoweare"
                 className="mt-10 lg:mt-40 pt-10 flex justify-start"
             >
-                <div className="flex flex-col lg:flex-row items-start gap-x-20 justify-between">
-                    <div className="">
+                <div className="flex flex-col  items-start gap-x-20 justify-between">
+                    <div className="flex justify-center lg:items-center flex-col">
                         <Badge className="text-[#66A786]" title="За нас" />
                         <motion.h1
                             {...fadeUpBlurInView}
@@ -147,7 +147,7 @@ export const Home = () => {
                                 }}
                             >
                                 <SealQuestionIcon
-                                    className="flex lg:hidden rotate-12 size-10 lg:size-20"
+                                    className="flex rotate-12 size-10 lg:size-20"
                                     weight="duotone"
                                     color="#181818"
                                 />
@@ -158,34 +158,17 @@ export const Home = () => {
                             {...fadeUpBlurInView}
                             viewport={{ once: true, amount: 0.35 }}
                             transition={{ type: "spring", duration: 0.5 }}
-                            className=" text-foreground/60 mt-6 lg:mt-10 "
+                            className="text-foreground/60  lg:text-center lg:w-1/2 mt-6 lg:mt-10 "
                         >
                             Геомин Про Консалтинг е компанија која обезбедува
                             услуги за дупчење и минирање во рудници, каменоломи,
                             при изградба нa патишта, железници, брани,
                             ветерници, нафтоводи, гасоводи и канално минирање
                         </motion.p>
-
-                        <motion.span
-                            className="hidden lg:flex mt-10 w-fit"
-                            {...scaleInView}
-                            viewport={{ once: true, amount: 0.35 }}
-                            transition={{
-                                type: "spring",
-                                duration: 0.5,
-                            }}
-                        >
-                            <SealQuestionIcon
-                                className="rotate-12 "
-                                size={120}
-                                weight="duotone"
-                                color="#181818"
-                            />
-                        </motion.span>
                     </div>
 
-                    <div className="mt-5 lg:mt-0 flex w-full relative flex-col gap-1">
-                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center left-15 top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                    <div className="mt-5 lg:mt-10 lg:place-self-center flex-col lg:flex-row flex w-full lg:w-3/4  relative gap-1">
+                        <div className="z-20 w-3 lg:w-14 h-14 lg:h-3 rounded-full absolute flex justify-center left-15 lg:left-1/2 lg:-translate-x-1/2 top-1/2 -translate-y-1/2 lg:top-10 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
                                 weight="fill"
                                 size={16}
@@ -193,7 +176,7 @@ export const Home = () => {
                                 className="-top-0.5 relative"
                             />
                         </div>
-                        <div className="z-20 w-3 h-14 rounded-full absolute flex justify-center right-15 top-1/2 -translate-y-1/2 bg-secondary/40 backdrop-blur-lg shadow-sm">
+                        <div className="z-20 w-3 lg:w-14 h-14 lg:h-3 rounded-full absolute flex justify-center right-15 lg:left-1/2 lg:-translate-x-1/2 top-1/2 -translate-y-1/2 lg:top-auto lg:bottom-10 bg-secondary/40 backdrop-blur-lg shadow-sm">
                             <XCircleIcon
                                 weight="fill"
                                 size={16}
@@ -201,7 +184,6 @@ export const Home = () => {
                                 className="-top-0.5 relative"
                             />
                         </div>
-                
 
                         <motion.div
                             {...fadeScaleBlurInView}
@@ -211,7 +193,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="p-1 lg:p-2 h-50  rounded-3xl bg-secondary"
+                            className="p-1 lg:p-2 h-50 lg:h-70 lg:w-1/2  rounded-3xl bg-secondary"
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
@@ -236,7 +218,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="p-1 lg:p-2 h-50  rounded-3xl bg-secondary"
+                            className="p-1 lg:p-2 lg:w-1/2 h-50 lg:h-70  rounded-3xl bg-secondary"
                         >
                             <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
                                 <motion.img
