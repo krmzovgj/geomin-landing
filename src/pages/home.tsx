@@ -80,7 +80,7 @@ export const Home = () => {
                     className="lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                 >
                     Mинирање, проектирање <br className="hidden lg:flex" />и
-                    руднички надзор
+                    рударски надзор
                 </motion.h1>
                 <motion.p
                     {...fadeUpBlur}
