@@ -9,6 +9,8 @@ import {
     scrollToSection,
 } from "@/lib/utils";
 import {
+    ArrowRightIcon,
+    BarricadeIcon,
     BrowsersIcon,
     CityIcon,
     DotsNineIcon,
@@ -67,7 +69,7 @@ export const Home = () => {
     ];
 
     return (
-        <div className="h-full">
+        <div className="h-full w-screen lg:py-8 lg:px-0 px-6 place-self-center lg:w-2/3">
             <div className="flex flex-col items-center">
                 <Badge
                     className="text-[#66A786]"
@@ -89,7 +91,7 @@ export const Home = () => {
                         duration: 0.5,
                         delay: 0.1,
                     }}
-                    className="mx-5 lg:mx-0 text-foreground/60 mt-6 lg:mt-10 text-center lg:w-1/2"
+                    className="mx-5 lg:mx-0 text-foreground/60 mt-6 text-center lg:w-1/2"
                 >
                     Нашиот тим има долгогодишно искуство во областа на дупчење,
                     минирање, <br className="hidden lg:flex" /> проектирање и
@@ -158,7 +160,7 @@ export const Home = () => {
                             {...fadeUpBlurInView}
                             viewport={{ once: true, amount: 0.35 }}
                             transition={{ type: "spring", duration: 0.5 }}
-                            className="text-foreground/60  lg:text-center lg:w-1/2 mt-6 lg:mt-10 "
+                            className="text-foreground/60  lg:text-center lg:w-1/2 mt-6 "
                         >
                             Геомин Про Консалтинг е компанија која обезбедува
                             услуги за дупчење и минирање во рудници, каменоломи,
@@ -268,7 +270,18 @@ export const Home = () => {
                     </motion.span>
                 </motion.h1>
 
-                <div className="mt-10 lg:mt-15 flex flex-col gap-8 lg:gap-1 lg:grid lg:grid-rows-2 lg:grid-cols-1 ">
+                <motion.p
+                    {...fadeUpBlurInView}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ type: "spring", duration: 0.5 }}
+                    className="lg:w-2/3 text-foreground/60 mt-6 "
+                >
+                    Нудиме сигурни и прецизни услуги за дупчење, минирање и
+                    рударски инженеринг, <br className="hidden md:flex" /> со
+                    фокус на безбедност и квалитет во секој проект.
+                </motion.p>
+
+                <div className="mt-10 lg:mt-15 flex flex-col gap-6 lg:grid lg:grid-rows-2 lg:grid-cols-2">
                     {services.map((item, i) => (
                         <motion.div
                             key={i}
@@ -278,56 +291,139 @@ export const Home = () => {
                                 type: "spring",
                                 duration: 0.5,
                             }}
-                            className="flex flex-col lg:flex-row justify-between lg:items-center gap-y-4 lg:gap-1"
+                            className="flex relative lg:p-2 flex-col rounded-4xl bg-secondary lg:flex-row p-1 gap-4"
                         >
-                            <div className="lg:w-2/3">
-                                <div className="flex items-center gap-x-4">
-                                    <div className="flex w-13 h-13 border-2 border-[#66A786] rounded-2xl bg-[#66A786]/10 justify-center items-center">
-                                        <item.icon
-                                            weight="duotone"
-                                            color="#66A786"
-                                            size={26}
-                                        />
-                                    </div>
-                                    <h1 className="hidden lg:flex text-2xl text-foreground font-black">
+                            <div className="bg-white flex flex-col justify-between rounded-3xl shadow-sm p-6">
+                                <div>
+                                    <item.icon
+                                        weight="duotone"
+                                        color="#66A786"
+                                        size={44}
+                                    />
+                                    {/* <h1 className="hidden lg:flex text-2xl text-foreground font-black">
                                         0{i + 1}
+                                    </h1> */}
+
+                                    <h1 className="mt-3  text-xl text-foreground">
+                                        {item.label}
                                     </h1>
                                 </div>
 
-                                <h1 className="mt-4 lg:mt-4 text-xl lg:text-2xl text-foreground">
-                                    {item.label}
-                                </h1>
-                                <p className="mt-1 lg:w-2/3 text-foreground/60 ">
-                                    {item.desc}
-                                </p>
-                            </div>
+                                <div>
+                                    <p className="mt-6 text-foreground/60 ">
+                                        {item.desc}
+                                    </p>
 
-                            <motion.div
-                                {...fadeScaleBlurInView}
+                                    <a
+                                        onClick={() =>
+                                            scrollToSection("howitlooks")
+                                        }
+                                        className="cursor-pointer flex mt-4 items-center gap-x-2"
+                                    >
+                                        Види повеќе{" "}
+                                        <ArrowRightIcon
+                                            weight="duotone"
+                                            size={20}
+                                            color="#66A786"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+
+            <div id="howitlooks" className="mt-10 lg:mt-40 pt-10 w-full">
+                <div className="flex items-center flex-col lg:flex-row lg:gap-x-10 justify-between">
+                    <div className=" w-fit">
+                        <motion.h1
+                            {...fadeUpBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
+                            transition={{ type: "spring", duration: 0.5 }}
+                            className="flex relative lg:text-7xl text-4xl font-medium text-foreground"
+                        >
+                            Како изгледа <br /> нашата работа
+                            <motion.span
+                                {...fadeUpBlurInView}
                                 viewport={{ once: true, amount: 0.35 }}
                                 transition={{
                                     type: "spring",
                                     duration: 0.5,
-                                    delay: 0.2,
+                                    delay: 0.1,
                                 }}
-                                className="p-1 lg:p-2 h-50 lg:h-60 lg:w-1/2 rounded-3xl bg-secondary"
                             >
-                                <div className="w-full z-0 h-full shadow-sm bg-background overflow-hidden rounded-2xl">
-                                    <motion.img
-                                        src={item.imgUrl}
-                                        loading="lazy"
-                                        decoding="async"
-                                        className="w-full relative scale-101  rounded-2xl h-full object-cover"
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{
-                                            duration: 0.5,
-                                            type: "spring",
-                                        }}
-                                    />
+                                <BarricadeIcon
+                                    className="rotate-45 absolute -right-14 lg:-right-12 -top-2 lg:-top-12 size-14 lg:size-20"
+                                    weight="duotone"
+                                    color="#181818"
+                                />
+                            </motion.span>
+                        </motion.h1>
+
+                        <motion.p
+                            {...fadeUpBlurInView}
+                            viewport={{ once: true, amount: 0.35 }}
+                            transition={{ type: "spring", duration: 0.5 }}
+                            className="text-foreground/60 mt-6"
+                        >
+                            Погледнете како нашите услуги за дупчење, минирање 
+                            
+                            <br className="hidden md:flex" />{" "}
+                            изгледаат во реалност, од рудници и каменоломи до
+                            инфраструктурни и урбани проекти.
+                        </motion.p>
+                    </div>
+
+                    <div
+                        className="w-full mt-10 lg:mt-0 lg:p-2 p-1 bg-secondary lg:w-1/2 h-50 lg:h-60  rounded-3xl "
+                        {...fadeScaleBlurInView}
+                    >
+                        <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                            <motion.img
+                                {...fadeScaleBlurInView}
+                                viewport={{ once: true, amount: 0.35 }}
+                                src="/service2.avif"
+                                className="w-full h-full object-cover overflow-hidden rounded-2xl"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{
+                                    duration: 0.5,
+                                    type: "spring",
+                                }}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-4 lg:mt-10 w-full">
+                    <div className="flex flex-col lg:flex-row gap-4 lg:gap-3">
+                        {services
+                            .filter((_, idx) => idx !== 1)
+                            .map((service, idx) => (
+                                <div
+                                    key={idx}
+                                    className="w-full lg:p-2 p-1 bg-secondary lg:w-1/3 h-50 rounded-3xl "
+                                    {...fadeScaleBlurInView}
+                                >
+                                    <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                                        <motion.img
+                                            {...fadeScaleBlurInView}
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.35,
+                                            }}
+                                            src={service.imgUrl}
+                                            className="w-full h-full object-cover rounded-2xl"
+                                            whileHover={{ scale: 1.05 }}
+                                            transition={{
+                                                duration: 0.5,
+                                                type: "spring",
+                                            }}
+                                        />
+                                    </div>
                                 </div>
-                            </motion.div>
-                        </motion.div>
-                    ))}
+                            ))}
+                    </div>
                 </div>
             </div>
 
@@ -349,7 +445,7 @@ export const Home = () => {
                     {...fadeUpBlurInView}
                     viewport={{ once: true, amount: 0.35 }}
                     transition={{ type: "spring", duration: 0.5 }}
-                    className="text-center lg:w-2/3 text-foreground/60 mt-6 lg:mt-10 "
+                    className="text-center lg:w-2/3 text-foreground/60 mt-6 "
                 >
                     Во нашиот ИТ сектор нудиме развој на практични{" "}
                     <br className="hidden md:flex" /> дигитални решенија
@@ -365,7 +461,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="lg:w-2/5 p-2 rounded-3xl bg-secondary"
+                            className="lg:w-2/5 p-1 lg:p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
                                 <h1 className="text-4xl font-black">01</h1>
@@ -394,7 +490,7 @@ export const Home = () => {
                                 duration: 0.5,
                                 delay: 0.2,
                             }}
-                            className="lg:w-2/5 p-2 rounded-3xl bg-secondary"
+                            className="lg:w-2/5 p-1 lg:p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
                                 <h1 className="text-4xl font-black">02</h1>

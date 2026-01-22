@@ -22,7 +22,7 @@ createRoot(document.getElementById("root")!).render(
             <Header />
             <div
                 id="home"
-                className="relative tracking-tight pt-40 md:pt-60 md:w-2/3 place-self-center w-screen md:py-8 md:px-0 px-6"
+                className="relative tracking-tight pt-40 lg:pt-60w-screen "
             >
                 <App />
             </div>
