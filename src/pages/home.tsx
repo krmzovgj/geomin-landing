@@ -291,9 +291,9 @@ export const Home = () => {
                                 type: "spring",
                                 duration: 0.5,
                             }}
-                            className="flex relative lg:p-2 flex-col rounded-4xl bg-secondary lg:flex-row p-1 gap-4"
+                            className="flex relative lg:p-2 flex-col rounded-4xl lg:bg-secondary lg:flex-row p-1 "
                         >
-                            <div className="bg-white flex flex-col justify-between rounded-3xl shadow-sm p-6">
+                            <div className="lg:bg-white flex flex-col justify-between rounded-3xl lg:shadow-sm lg:p-6">
                                 <div>
                                     <item.icon
                                         weight="duotone"
@@ -367,11 +367,10 @@ export const Home = () => {
                             transition={{ type: "spring", duration: 0.5 }}
                             className="text-foreground/60 mt-6"
                         >
-                            Погледнете како нашите услуги за дупчење, минирање 
-                            
-                            <br className="hidden md:flex" />{" "}
-                            изгледаат во реалност, од рудници и каменоломи до
-                            инфраструктурни и урбани проекти.
+                            Погледнете како нашите услуги за дупчење, минирање
+                            <br className="hidden md:flex" /> изгледаат во
+                            реалност, од рудници и каменоломи до инфраструктурни
+                            и урбани проекти.
                         </motion.p>
                     </div>
 
