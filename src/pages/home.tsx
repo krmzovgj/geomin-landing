@@ -35,7 +35,7 @@ export const Home = () => {
                     </span>
                 </>
             ),
-            imgUrl: "/service1.avif",
+            imgUrl: "/serv1.avif",
             desc: "Ефикасно и безбедно минирање во усеци и масовно минирање при отварање на рудници и каменоломи.",
         },
         {
@@ -53,7 +53,7 @@ export const Home = () => {
                     <span className="block sm:inline">урбани средини</span>
                 </>
             ),
-            imgUrl: "/about.avif",
+            imgUrl: "/serv3.avif",
 
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
