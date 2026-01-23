@@ -488,7 +488,7 @@ export const Home = () => {
                             className="lg:w-2/5 p-1 lg:p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
-                                <h1 className="text-4xl font-black">01</h1>
+                                <h1 className="text-4xl font-medium">01</h1>
                                 <BrowsersIcon
                                     weight="duotone"
                                     size={120}
@@ -517,7 +517,7 @@ export const Home = () => {
                             className="lg:w-2/5 p-1 lg:p-2 rounded-3xl bg-secondary"
                         >
                             <div className="rounded-2xl bg-background shadow-sm overflow-hidden relative p-6">
-                                <h1 className="text-4xl font-black">02</h1>
+                                <h1 className="text-4xl font-medium">02</h1>
                                 <TreeStructureIcon
                                     weight="duotone"
                                     size={120}
