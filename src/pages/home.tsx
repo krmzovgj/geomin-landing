@@ -38,14 +38,12 @@ export const Home = () => {
                 </>
             ),
             imgUrl: "/serv1.avif",
-            subLabel: "Масовно минирање",
             desc: "Ефикасно и безбедно минирање во усеци и масовно минирање при отварање на рудници и каменоломи.",
         },
         {
             icon: DotsNineIcon,
-            label: "Инфраструктурни проекти",
             imgUrl: "/service2.avif",
-            subLabel: "Инфраструктурни проекти",
+            label: "Инфраструктурни проекти",
 
             desc: "Дупчење и минирање при изградба на патишта, железници, брани, ветерници, нафтоводи, гасоводи и канално минирање.",
         },
@@ -58,7 +56,6 @@ export const Home = () => {
                 </>
             ),
             imgUrl: "/specijalno.avif",
-            subLabel: "Специјално минирање",
 
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
@@ -66,7 +63,6 @@ export const Home = () => {
             icon: LightbulbIcon,
             label: "Консултантски услуги и инженеринг",
             imgUrl: "/service4.avif",
-            subLabel: "Консултантски услуги",
 
             desc: "Стручни совети и поддршка од областа на рударството при планирање, проектирање, изработка на рударски проекти и надзор во рударството.",
         },
@@ -75,7 +71,7 @@ export const Home = () => {
     const ourWork = [
         {
             imgUrl: "/serv1.avif",
-            subLabel: "Инфраструктурни проекти",
+            subLabel: "Масовно минирање",
         },
         {
             imgUrl: "/specijalno.avif",
@@ -300,7 +296,7 @@ export const Home = () => {
                     фокус на безбедност и квалитет во секој проект.
                 </motion.p>
 
-                <div className="mt-10 lg:mt-15 flex flex-col gap-6 lg:grid lg:grid-rows-2 lg:grid-cols-2">
+                <div className="mt-10 lg:mt-15 flex flex-col gap-6 lg:gap-y-20 lg:grid lg:grid-rows-2 lg:grid-cols-2">
                     {services.map((item, i) => (
                         <motion.div
                             key={i}
@@ -310,9 +306,9 @@ export const Home = () => {
                                 type: "spring",
                                 duration: 0.5,
                             }}
-                            className="flex relative lg:p-2 flex-col rounded-4xl lg:bg-secondary lg:flex-row p-1 "
+                            className="flex relative flex-col lg:flex-row  pr-20 "
                         >
-                            <div className="lg:bg-white flex flex-col justify-between rounded-3xl lg:shadow-sm lg:p-6">
+                            <div className="flex flex-col justify-between">
                                 <div>
                                     <item.icon
                                         weight="duotone"
@@ -412,7 +408,7 @@ export const Home = () => {
 
                             <div className="py-3 absolute bottom-0 w-full px-5 bg-foreground/20 backdrop-blur-lg">
                                 <h3 className="text-background text-sm">
-                                    Масовно минирање
+                                    Инфраструктурни проекти
                                 </h3>
                             </div>
                         </div>
