@@ -38,12 +38,14 @@ export const Home = () => {
                 </>
             ),
             imgUrl: "/serv1.avif",
+            subLabel: "Масовно минирање",
             desc: "Ефикасно и безбедно минирање во усеци и масовно минирање при отварање на рудници и каменоломи.",
         },
         {
             icon: DotsNineIcon,
             label: "Инфраструктурни проекти",
             imgUrl: "/service2.avif",
+            subLabel: "Инфраструктурни проекти",
 
             desc: "Дупчење и минирање при изградба на патишта, железници, брани, ветерници, нафтоводи, гасоводи и канално минирање.",
         },
@@ -56,6 +58,7 @@ export const Home = () => {
                 </>
             ),
             imgUrl: "/specijalno.avif",
+            subLabel: "Специјално минирање",
 
             desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
         },
@@ -63,8 +66,24 @@ export const Home = () => {
             icon: LightbulbIcon,
             label: "Консултантски услуги и инженеринг",
             imgUrl: "/service4.avif",
+            subLabel: "Консултантски услуги",
 
             desc: "Стручни совети и поддршка од областа на рударството при планирање, проектирање, изработка на рударски проекти и надзор во рударството.",
+        },
+    ];
+
+    const ourWork = [
+        {
+            imgUrl: "/serv1.avif",
+            subLabel: "Инфраструктурни проекти",
+        },
+        {
+            imgUrl: "/specijalno.avif",
+            subLabel: "Специјално минирање",
+        },
+        {
+            imgUrl: "/service4.avif",
+            subLabel: "Консултантски услуги",
         },
     ];
 
@@ -378,7 +397,7 @@ export const Home = () => {
                         className="w-full mt-10 lg:mt-0 lg:p-2 p-1 bg-secondary lg:w-1/2 h-50 lg:h-60  rounded-3xl "
                         {...fadeScaleBlurInView}
                     >
-                        <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
+                        <div className="w-full h-full relative shadow-sm bg-background overflow-hidden rounded-2xl">
                             <motion.img
                                 {...fadeScaleBlurInView}
                                 viewport={{ once: true, amount: 0.35 }}
@@ -390,38 +409,48 @@ export const Home = () => {
                                     type: "spring",
                                 }}
                             />
+
+                            <div className="py-3 absolute bottom-0 w-full px-5 bg-foreground/20 backdrop-blur-lg">
+                                <h3 className="text-background text-sm">
+                                    Масовно минирање
+                                </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-4 lg:mt-10 w-full">
                     <div className="flex flex-col lg:flex-row gap-4 lg:gap-3">
-                        {services
-                            .filter((_, idx) => idx !== 1)
-                            .map((service, idx) => (
-                                <div
-                                    key={idx}
-                                    className="w-full lg:p-2 p-1 bg-secondary lg:w-1/3 h-50 rounded-3xl "
-                                    {...fadeScaleBlurInView}
-                                >
-                                    <div className="w-full h-full shadow-sm bg-background overflow-hidden rounded-2xl">
-                                        <motion.img
-                                            {...fadeScaleBlurInView}
-                                            viewport={{
-                                                once: true,
-                                                amount: 0.35,
-                                            }}
-                                            src={service.imgUrl}
-                                            className="w-full h-full object-cover rounded-2xl"
-                                            whileHover={{ scale: 1.05 }}
-                                            transition={{
-                                                duration: 0.5,
-                                                type: "spring",
-                                            }}
-                                        />
+                        {ourWork.map((service, idx) => (
+                            <div
+                                key={idx}
+                                className="w-full lg:p-2 p-1 bg-secondary lg:w-1/3 h-50 rounded-3xl "
+                                {...fadeScaleBlurInView}
+                            >
+                                <div className="w-full h-full relative shadow-sm bg-background overflow-hidden rounded-2xl">
+                                    <motion.img
+                                        {...fadeScaleBlurInView}
+                                        viewport={{
+                                            once: true,
+                                            amount: 0.35,
+                                        }}
+                                        src={service.imgUrl}
+                                        className="w-full h-full object-cover rounded-2xl"
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{
+                                            duration: 0.5,
+                                            type: "spring",
+                                        }}
+                                    />
+
+                                    <div className="py-3 absolute bottom-0 w-full px-5 bg-foreground/20 backdrop-blur-lg">
+                                        <h3 className="text-background text-sm">
+                                            {service.subLabel}
+                                        </h3>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
