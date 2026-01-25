@@ -1,22 +1,30 @@
-import { scrollToSection } from "@/lib/utils";
-import { InstagramLogoIcon, ListIcon, PhoneCallIcon, XIcon } from "@phosphor-icons/react";
+import { homeTranslations } from "@/i18n/home";
+import { fadeScaleBlur, scaleIn, scrollToSection } from "@/lib/utils";
+import {
+    InstagramLogoIcon,
+    ListIcon,
+    PhoneCallIcon,
+    XIcon,
+} from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 
-export const Header = () => {
+export const Header = ({
+    lang,
+    setLang,
+}: {
+    lang: "mk" | "en";
+    setLang: (l: "mk" | "en") => void;
+}) => {
     const [menuOpen, setmenuOpen] = useState(false);
 
     const toggleMenuOpen = () => setmenuOpen((prev) => !prev);
-    const menuItems = [
-        { label: "Почетна", target: "home" },
-        { label: "Кои сме ние", target: "whoweare" },
-        { label: "Услуги", target: "services" },
-        { label: "ИТ Сектор", target: "itdep" },
-    ];
 
-    const menuRef = useRef<HTMLDivElement>(null); // 1. Create a ref for the button
-    const toggleBtnRef = useRef<HTMLDivElement>(null); // 1. Create a ref for the button
+    const menuRef = useRef<HTMLDivElement>(null);
+    const toggleBtnRef = useRef<HTMLDivElement>(null);
+
+    const t = homeTranslations[lang];
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -57,13 +65,14 @@ export const Header = () => {
             <div className="w-full pl-6 pr-3 py-3 md:pl-7 md:p-3 flex justify-between items-center bg-secondary/70 backdrop-blur-md border border-white/10 rounded-full z-60">
                 <div className="flex flex-col justify-center">
                     <h3 className="md:text-3xl text-2xl tracking-tighter font-black">
-                        <span className="text-[#66A786]">ГЕО</span>МИН
+                        <span className="text-[#66A786]">{t.geo}</span>
+                        {t.min}
                     </h3>
                 </div>
 
                 {/* Desktop Nav */}
                 <div className="md:flex hidden items-center gap-x-5">
-                    {menuItems.map((item, i) => (
+                    {t.menuItems.map((item, i) => (
                         <p
                             onClick={() => scrollToSection(item.target)}
                             key={i}
@@ -75,8 +84,45 @@ export const Header = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <Button onClick={() => scrollToSection("contact")} className="md:flex hidden text-md px-8 bg-foreground text-background rounded-full">
-                        Контактирај нѐ
+                    <Button
+                        onClick={() => scrollToSection("contact")}
+                        className="md:flex hidden text-md px-8 bg-foreground text-background rounded-full"
+                    >
+                        {t.contactUs}
+                    </Button>
+
+                    <Button
+                        onClick={() => setLang(lang === "mk" ? "en" : "mk")}
+                        className="lg:flex hidden pl-2 pr-4"
+                        variant="ghost"
+                    >
+                        <AnimatePresence>
+                            {lang === "en" ? (
+                                <motion.img
+                                    key="mk"
+                                    src="/MK.svg"
+                                    {...scaleIn}
+                                    transition={{
+                                        type: "spring",
+                                        duration: 0.5,
+                                    }}
+                                    className="w-8 rounded-md"
+                                    alt=""
+                                />
+                            ) : (
+                                <motion.img
+                                    key="gb"
+                                    src="/GB.svg"
+                                    {...scaleIn}
+                                    transition={{
+                                        type: "spring",
+                                        duration: 0.5,
+                                    }}
+                                    className="w-8 rounded-md"
+                                    alt=""
+                                />
+                            )}
+                        </AnimatePresence>
                     </Button>
 
                     <motion.div
@@ -137,7 +183,7 @@ export const Header = () => {
                         className="fixed origin-center z-99 top-20 rounded-4xl place-self-center w-full bg-secondary/70 backdrop-blur-md border border-white/10 p-6  md:hidden overflow-hidden"
                     >
                         <div className="flex flex-col gap-4">
-                            {menuItems.map((item, i) => (
+                            {t.menuItems.map((item, i) => (
                                 <p
                                     onClick={() => {
                                         setmenuOpen(false);
@@ -149,6 +195,43 @@ export const Header = () => {
                                     {item.label}
                                 </p>
                             ))}
+
+                            <Button
+                                onClick={() => {
+                                    setLang(lang === "mk" ? "en" : "mk");
+                                    setmenuOpen(false);
+                                }}
+                                className="lg:hidden flex p-0"
+                                variant="ghost"
+                            >
+                                <AnimatePresence>
+                                    {lang === "en" ? (
+                                        <motion.img
+                                            key="mk"
+                                            src="/MK.svg"
+                                            {...fadeScaleBlur}
+                                            transition={{
+                                                type: "spring",
+                                                duration: 0.5,
+                                            }}
+                                            className="w-8 rounded-md"
+                                            alt=""
+                                        />
+                                    ) : (
+                                        <motion.img
+                                            key="gb"
+                                            src="/GB.svg"
+                                            {...fadeScaleBlur}
+                                            transition={{
+                                                type: "spring",
+                                                duration: 0.5,
+                                            }}
+                                            className="w-8 rounded-md"
+                                            alt=""
+                                        />
+                                    )}
+                                </AnimatePresence>
+                            </Button>
 
                             <div className="flex mt-5 flex-col gap-y-4">
                                 <a

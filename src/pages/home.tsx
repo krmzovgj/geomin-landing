@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
+import { homeTranslations } from "@/i18n/home";
 import {
     fadeScaleBlur,
     fadeScaleBlurInView,
@@ -12,92 +13,31 @@ import {
     ArrowRightIcon,
     BarricadeIcon,
     BrowsersIcon,
-    CityIcon,
-    DotsNineIcon,
     HardHatIcon,
-    LightbulbIcon,
     PackageIcon,
     PhoneCallIcon,
     SealQuestionIcon,
     TreeStructureIcon,
-    XCircleIcon,
+    XCircleIcon
 } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { Badge } from "../components/ui/badge";
 
-export const Home = () => {
-    const services = [
-        {
-            icon: HardHatIcon,
-            label: (
-                <>
-                    Дупчење и минирање во{" "}
-                    <span className="block sm:inline">
-                        рудници и каменоломи
-                    </span>
-                </>
-            ),
-            imgUrl: "/serv1.avif",
-            desc: "Ефикасно и безбедно минирање во усеци и масовно минирање при отварање на рудници и каменоломи.",
-        },
-        {
-            icon: DotsNineIcon,
-            imgUrl: "/service2.avif",
-            label: "Инфраструктурни проекти",
+export const Home = ({lang}: {lang: "mk" | "en"}) => {
 
-            desc: "Дупчење и минирање при изградба на патишта, железници, брани, ветерници, нафтоводи, гасоводи и канално минирање.",
-        },
-        {
-            icon: CityIcon,
-            label: (
-                <>
-                    Специјално минирање во{" "}
-                    <span className="block sm:inline">урбани средини</span>
-                </>
-            ),
-            imgUrl: "/specijalno.avif",
-
-            desc: "Прецизно и контролирано минирање со минимално влијание врз околината и инфраструктурата.",
-        },
-        {
-            icon: LightbulbIcon,
-            label: "Консултантски услуги и инженеринг",
-            imgUrl: "/service4.avif",
-
-            desc: "Стручни совети и поддршка од областа на рударството при планирање, проектирање, изработка на рударски проекти и надзор во рударството.",
-        },
-    ];
-
-    const ourWork = [
-        {
-            imgUrl: "/serv1.avif",
-            subLabel: "Масовно минирање",
-        },
-        {
-            imgUrl: "/specijalno.avif",
-            subLabel: "Специјално минирање",
-        },
-        {
-            imgUrl: "/service4.avif",
-            subLabel: "Консултантски услуги",
-        },
-    ];
+    const t = homeTranslations[lang];
 
     return (
         <div className="h-full w-screen lg:py-8 lg:px-0 px-6 place-self-center lg:w-2/3">
             <div className="flex flex-col items-center">
-                <Badge
-                    className="text-[#66A786]"
-                    title="Геомин Про Консалтинг"
-                />
+                <Badge className="text-[#66A786]" title={t.badgeCompany} />
 
                 <motion.h1
                     {...fadeUpBlur}
                     transition={{ type: "spring", duration: 0.5 }}
                     className="lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                 >
-                    Mинирање, проектирање <br className="hidden lg:flex" />и
-                    рударски надзор
+                    {t.heroTitle}
                 </motion.h1>
                 <motion.p
                     {...fadeUpBlur}
@@ -108,9 +48,7 @@ export const Home = () => {
                     }}
                     className="mx-5 lg:mx-0 text-foreground/60 mt-6 text-center lg:w-1/2"
                 >
-                    Нашиот тим има долгогодишно искуство во областа на дупчење,
-                    минирање, <br className="hidden lg:flex" /> проектирање и
-                    надзор во рударството
+                    {t.heroDesc}
                 </motion.p>
 
                 <Button
@@ -118,7 +56,7 @@ export const Home = () => {
                     onClick={() => scrollToSection("whoweare")}
                     className="mt-5"
                 >
-                    Дознај Повеќе
+                    {t.seeMore}
                 </Button>
 
                 <motion.div
@@ -146,14 +84,17 @@ export const Home = () => {
             >
                 <div className="flex flex-col  items-start gap-x-20 justify-between">
                     <div className="flex justify-center lg:items-center flex-col">
-                        <Badge className="text-[#66A786]" title="За нас" />
+                        <Badge
+                            className="text-[#66A786]"
+                            title={t.aboutBadge}
+                        />
                         <motion.h1
                             {...fadeUpBlurInView}
                             viewport={{ once: true, amount: 0.35 }}
                             transition={{ type: "spring", duration: 0.5 }}
                             className="flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl mt-3 text-center text-4xl font-medium text-foreground"
                         >
-                            Кои сме ние{" "}
+                            {t.aboutTitle}{" "}
                             <motion.span
                                 {...scaleInView}
                                 viewport={{ once: true, amount: 0.35 }}
@@ -177,10 +118,7 @@ export const Home = () => {
                             transition={{ type: "spring", duration: 0.5 }}
                             className="text-foreground/60  lg:text-center lg:w-1/2 mt-6 "
                         >
-                            Геомин Про Консалтинг е компанија која обезбедува
-                            услуги за дупчење и минирање во рудници, каменоломи,
-                            при изградба нa патишта, железници, брани,
-                            ветерници, нафтоводи, гасоводи и канално минирање
+                            {t.aboutDesc}
                         </motion.p>
                     </div>
 
@@ -256,10 +194,7 @@ export const Home = () => {
             </div>
 
             <div id="services" className="mt-10 lg:mt-40 pt-10">
-                <Badge
-                    className="text-[#66A786]"
-                    title="Како се разликуваме?"
-                />
+                <Badge className="text-[#66A786]" title={t.servicesBadge} />
 
                 <motion.h1
                     {...fadeUpBlurInView}
@@ -267,7 +202,7 @@ export const Home = () => {
                     transition={{ type: "spring", duration: 0.5 }}
                     className="mt-3 flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl  text-center text-4xl font-medium text-foreground"
                 >
-                    Нашите услуги
+                    {t.servicesTitle}
                     <motion.span
                         {...fadeUpBlurInView}
                         viewport={{ once: true, amount: 0.35 }}
@@ -291,13 +226,11 @@ export const Home = () => {
                     transition={{ type: "spring", duration: 0.5 }}
                     className="lg:w-2/3 text-foreground/60 mt-6 "
                 >
-                    Нудиме сигурни и прецизни услуги за дупчење, минирање и
-                    рударски инженеринг, <br className="hidden md:flex" /> со
-                    фокус на безбедност и квалитет во секој проект.
+                    {t.servicesDesc}
                 </motion.p>
 
                 <div className="mt-10 lg:mt-15 flex flex-col gap-6 lg:gap-y-20 lg:grid lg:grid-rows-2 lg:grid-cols-2">
-                    {services.map((item, i) => (
+                    {t.services.map((item: any, i: number) => (
                         <motion.div
                             key={i}
                             {...fadeUpBlurInView}
@@ -335,7 +268,7 @@ export const Home = () => {
                                         }
                                         className="cursor-pointer flex mt-4 items-center gap-x-2"
                                     >
-                                        Види повеќе{" "}
+                                        {t.seeMore}{" "}
                                         <ArrowRightIcon
                                             weight="duotone"
                                             size={20}
@@ -358,7 +291,7 @@ export const Home = () => {
                             transition={{ type: "spring", duration: 0.5 }}
                             className="flex relative lg:text-7xl text-4xl font-medium text-foreground"
                         >
-                            Како изгледа <br /> нашата работа
+                            {t.howItLooksTitle}
                             <motion.span
                                 {...fadeUpBlurInView}
                                 viewport={{ once: true, amount: 0.35 }}
@@ -382,10 +315,7 @@ export const Home = () => {
                             transition={{ type: "spring", duration: 0.5 }}
                             className="text-foreground/60 mt-6"
                         >
-                            Погледнете како нашите услуги за дупчење, минирање
-                            <br className="hidden md:flex" /> изгледаат во
-                            реалност, од рудници и каменоломи до инфраструктурни
-                            и урбани проекти.
+                            {t.howItLooksDesc}
                         </motion.p>
                     </div>
 
@@ -408,7 +338,7 @@ export const Home = () => {
 
                             <div className="py-3 absolute bottom-0 w-full px-5 bg-foreground/20 backdrop-blur-lg">
                                 <h3 className="text-background text-sm">
-                                    Инфраструктурни проекти
+                                    {t.InfrastructureProjects}
                                 </h3>
                             </div>
                         </div>
@@ -417,7 +347,7 @@ export const Home = () => {
 
                 <div className="mt-4 lg:mt-10 w-full">
                     <div className="flex flex-col lg:flex-row gap-4 lg:gap-3">
-                        {ourWork.map((service, idx) => (
+                        {t.ourWork.map((service: any, idx: number) => (
                             <div
                                 key={idx}
                                 className="w-full lg:p-2 p-1 bg-secondary lg:w-1/3 h-50 rounded-3xl "
@@ -441,7 +371,7 @@ export const Home = () => {
 
                                     <div className="py-3 absolute bottom-0 w-full px-5 bg-foreground/20 backdrop-blur-lg">
                                         <h3 className="text-background text-sm">
-                                            {service.subLabel}
+                                            {service.label}
                                         </h3>
                                     </div>
                                 </div>
@@ -455,7 +385,7 @@ export const Home = () => {
                 id="itdep"
                 className="mt-10 lg:mt-40 pt-10 flex flex-col justify-center items-center"
             >
-                <Badge className="text-[#FF8C00]" title="ИТ Сектор" />
+                <Badge className="text-[#FF8C00]" title={t.itBadge} />
 
                 <motion.h1
                     {...fadeUpBlurInView}
@@ -463,7 +393,7 @@ export const Home = () => {
                     transition={{ type: "spring", duration: 0.5 }}
                     className="mt-3 flex items-center gap-x-3 lg:gap-x-5 lg:text-7xl  text-center text-4xl font-medium text-foreground"
                 >
-                    Дигитални Решенија
+                    {t.itTitle}
                 </motion.h1>
                 <motion.p
                     {...fadeUpBlurInView}
@@ -471,8 +401,7 @@ export const Home = () => {
                     transition={{ type: "spring", duration: 0.5 }}
                     className="text-center lg:w-2/3 text-foreground/60 mt-6 "
                 >
-                    Во нашиот ИТ сектор нудиме развој на практични{" "}
-                    <br className="hidden md:flex" /> дигитални решенија
+                    {t.itDesc}
                 </motion.p>
 
                 <div className="mt-10 lg:mt-15 lg:gap-5 gap-4 flex flex-col">
@@ -495,13 +424,9 @@ export const Home = () => {
                                     color="#FF8C00"
                                     className="-top-8 -right-5 rotate-12 absolute"
                                 />
-                                <h2 className="text-xl mt-8">
-                                    Развој на веб апликации
-                                </h2>
+                                <h2 className="text-xl mt-8">{t.webApps}</h2>
                                 <p className="mt-2 lg:w-4/4 text-foreground/60 text-sm">
-                                    Веб апликации прилагодени на вашите потреби
-                                    за интерно користење, платформи од различен
-                                    тип, промотивни сајтови..
+                                    {t.webAppsDesc}
                                 </p>
                             </div>
                         </motion.div>
@@ -524,13 +449,9 @@ export const Home = () => {
                                     color="#FF8C00"
                                     className="-top-8 -right-5 rotate-12 absolute"
                                 />
-                                <h2 className="text-xl mt-8">
-                                    Системи за автоматизација
-                                </h2>
+                                <h2 className="text-xl mt-8">{t.automation}</h2>
                                 <p className="mt-2 lg:w-3/4 text-foreground/60 text-sm">
-                                    Автоматизација на секојдневни мануелни
-                                    процеси со цел вие да се фокусирате на она
-                                    што е важно.
+                                    {t.automationDesc}
                                 </p>
                             </div>
                         </motion.div>
@@ -545,13 +466,13 @@ export const Home = () => {
                     transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
                     className="relative w-full flex flex-col justify-center items-center"
                 >
-                    <Badge title="Стапи во контакт" />
+                    <Badge title={t.contactBadge} />
                     <div className="flex items-center relative  overflow-visible gap-x-3 lg:gap-x-4">
                         {/* Icon on top */}
 
                         {/* Text below */}
                         <h1 className="z-0 mt-1 md:mt-10 lg:text-7xl text-4xl font-medium text-center text-foreground">
-                            Контактирај нѐ
+                            {t.contactTitle}
                         </h1>
                         <HardHatIcon
                             className="absolute  -right-6 -top-8 md:-right-10 md:-top-9   rotate-20 size-10 lg:size-20"
@@ -561,14 +482,14 @@ export const Home = () => {
                     </div>
 
                     <p className="text-center text-foreground/60 mt-6 lg:mt-10">
-                        Стапи во контакт преку телефонски број
+                        {t.contactDesc}
                     </p>
 
                     <div className="flex items-start flex-col lg:flex-row xl:gap-20 gap-15 mt-15">
                         <div className="flex flex-col justify-center items-center">
-                            <h3 className="text-2xl font-medium">Геомин</h3>
+                            <h3 className="text-2xl font-medium">{t.geomin}</h3>
                             <h3 className="text-md text-foreground/70 font-medium">
-                                Митко
+                                {t.mitko}
                             </h3>
                             <div className="mt-4 flex items-center gap-x-2">
                                 <PhoneCallIcon
@@ -585,9 +506,11 @@ export const Home = () => {
                         {/* <div className="lg:h-30 lg:w-1 w-full h-1 bg-foreground/10 rounded-lg"></div> */}
 
                         <div className="flex flex-col justify-center items-center">
-                            <h3 className="text-2xl font-medium">ИТ Сектор</h3>
+                            <h3 className="text-2xl font-medium">
+                                {t.itBadge}
+                            </h3>
                             <h3 className="text-md text-foreground/70 font-medium">
-                                Ѓорги
+                                {t.gjorgi}
                             </h3>
 
                             <div className="mt-4 flex items-center gap-x-2">
@@ -605,7 +528,7 @@ export const Home = () => {
                 </motion.div>
             </div>
 
-            <Footer />
+            <Footer lang={lang} />
         </div>
     );
 };
