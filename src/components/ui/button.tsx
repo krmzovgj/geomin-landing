@@ -41,10 +41,12 @@ function Button({
     variant = "default",
     size = "default",
     asChild = false,
+    animate = true,
     ...props
 }: React.ComponentProps<"button"> &
     VariantProps<typeof buttonVariants> & {
         asChild?: boolean;
+        animate?: boolean;
     }) {
     const Comp = asChild ? Slot : "button";
 
@@ -54,22 +56,34 @@ function Button({
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", duration: 0.4 }}
         >
-            <Comp
-                data-slot="button"
-                data-variant={variant}
-                data-size={size}
-                className={cn(buttonVariants({ variant, size, className }))}
-                {...props}
-            >
-                <span className="relative inline-flex overflow-hidden">
-                    <div className="translate-y-0 leading-10  skew-y-0 transition duration-300 group-hover:-translate-y-[110%] group-hover:skew-y-12">
-                        {props.children}
-                    </div>
-                    <div className="absolute leading-10 translate-y-[110%] skew-y-12 transition duration-300 group-hover:translate-y-0 group-hover:skew-y-0">
-                        {props.children}
-                    </div>
-                </span>
-            </Comp>
+            {animate ? (
+                <Comp
+                    data-slot="button"
+                    data-variant={variant}
+                    data-size={size}
+                    className={cn(buttonVariants({ variant, size, className }))}
+                    {...props}
+                >
+                    <span className="relative inline-flex overflow-hidden">
+                        <div className="translate-y-0 leading-10  skew-y-0 transition duration-300 group-hover:-translate-y-[110%] group-hover:skew-y-12">
+                            {props.children}
+                        </div>
+                        <div className="absolute leading-10 translate-y-[110%] skew-y-12 transition duration-300 group-hover:translate-y-0 group-hover:skew-y-0">
+                            {props.children}
+                        </div>
+                    </span>
+                </Comp>
+            ) : (
+                <Comp
+                    data-slot="button"
+                    data-variant={variant}
+                    data-size={size}
+                    className={cn(buttonVariants({ variant, size, className }))}
+                    {...props}
+                >
+                    {props.children}
+                </Comp>
+            )}
         </motion.span>
     );
 }

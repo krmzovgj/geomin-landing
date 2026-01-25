@@ -8,7 +8,7 @@ import { GridPattern } from "./components/grid-pattern/index.tsx";
 import { cn } from "./lib/utils.ts";
 
 const Main = () => {
-    const [lang, setLang] = useState<"mk" | "en">("en");
+    const [lang, setLang] = useState<"mk" | "en">("mk");
 
     useEffect(() => {
         const l = localStorage.getItem("lang") as "mk" | "en";

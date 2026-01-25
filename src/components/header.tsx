@@ -95,6 +95,7 @@ export const Header = ({
                         onClick={() => setLang(lang === "mk" ? "en" : "mk")}
                         className="lg:flex hidden pl-2 pr-4"
                         variant="ghost"
+                        animate={false}
                     >
                         <AnimatePresence>
                             {lang === "en" ? (
@@ -196,42 +197,45 @@ export const Header = ({
                                 </p>
                             ))}
 
-                            <Button
-                                onClick={() => {
-                                    setLang(lang === "mk" ? "en" : "mk");
-                                    setmenuOpen(false);
-                                }}
-                                className="lg:hidden flex p-0"
-                                variant="ghost"
-                            >
-                                <AnimatePresence>
-                                    {lang === "en" ? (
-                                        <motion.img
-                                            key="mk"
-                                            src="/MK.svg"
-                                            {...fadeScaleBlur}
-                                            transition={{
-                                                type: "spring",
-                                                duration: 0.5,
-                                            }}
-                                            className="w-8 rounded-md"
-                                            alt=""
-                                        />
-                                    ) : (
-                                        <motion.img
-                                            key="gb"
-                                            src="/GB.svg"
-                                            {...fadeScaleBlur}
-                                            transition={{
-                                                type: "spring",
-                                                duration: 0.5,
-                                            }}
-                                            className="w-8 rounded-md"
-                                            alt=""
-                                        />
-                                    )}
-                                </AnimatePresence>
-                            </Button>
+                            <div className="w-fit">
+                                <Button
+                                    onClick={() => {
+                                        setLang(lang === "mk" ? "en" : "mk");
+                                        setmenuOpen(false);
+                                    }}
+                                    className="lg:hidden block place-self-start  p-0"
+                                    variant="ghost"
+                                    animate={false}
+                                >
+                                    <AnimatePresence>
+                                        {lang === "en" ? (
+                                            <motion.img
+                                                key="mk"
+                                                src="/MK.svg"
+                                                {...fadeScaleBlur}
+                                                transition={{
+                                                    type: "spring",
+                                                    duration: 0.5,
+                                                }}
+                                                className="w-8 rounded-md"
+                                                alt=""
+                                            />
+                                        ) : (
+                                            <motion.img
+                                                key="gb"
+                                                src="/GB.svg"
+                                                {...fadeScaleBlur}
+                                                transition={{
+                                                    type: "spring",
+                                                    duration: 0.5,
+                                                }}
+                                                className="w-8 rounded-md"
+                                                alt=""
+                                            />
+                                        )}
+                                    </AnimatePresence>
+                                </Button>
+                            </div>
 
                             <div className="flex mt-5 flex-col gap-y-4">
                                 <a
